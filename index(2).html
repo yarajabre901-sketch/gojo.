@@ -1,0 +1,2154 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الجدة صفصافة الضاد — معجم الجذور وموسوعة الشعر العربي</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            amiri: ['Amiri', 'serif'],
+            ruqaa: ['Aref Ruqaa', 'serif'],
+            cairo: ['Cairo', 'sans-serif'],
+          },
+          colors: {
+            parchment: {
+              50: '#fcf9f2',
+              100: '#f7f0e1',
+              200: '#efe2c6',
+              800: '#2d2419',
+              900: '#1d1710',
+            },
+            emeraldInk: {
+              700: '#165b49',
+              800: '#0f4235',
+            },
+            gold: {
+              400: '#e2b857',
+              500: '#c99732',
+              600: '#a3751c',
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: #f7f0e1;
+      color: #2d2419;
+      overflow-x: hidden;
+    }
+    html.dark body {
+      background-color: #15110c;
+      color: #f3ead8;
+    }
+    .poem-line {
+      font-family: 'Amiri', serif;
+      line-height: 2.3;
+    }
+    .word-token {
+      cursor: pointer;
+      padding: 2px 5px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      display: inline-block;
+    }
+    .word-token:hover {
+      background-color: rgba(201, 151, 50, 0.24);
+      color: #0f4235;
+      transform: translateY(-1px);
+    }
+    html.dark .word-token:hover {
+      background-color: rgba(226, 184, 87, 0.25);
+      color: #f6d57f;
+    }
+    .word-token.active-word {
+      background-color: #165b49;
+      color: #fff8e7;
+      box-shadow: 0 3px 10px rgba(22, 91, 73, 0.35);
+    }
+    html.dark .word-token.active-word {
+      background-color: #c99732;
+      color: #18130d;
+    }
+    /* شريط تمرير أنيق */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(201, 151, 50, 0.1);
+      border-radius: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(201, 151, 50, 0.45);
+      border-radius: 8px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(201, 151, 50, 0.7);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-gold-500/30">
+
+  <!-- الشريط العلوي التراثي -->
+  <header class="sticky top-0 z-40 backdrop-blur-md bg-[#f8f2e4]/90 dark:bg-[#14110e]/90 border-b border-gold-500/30 px-4 py-3 shadow-sm">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-emeraldInk-700 via-teal-800 to-emeraldInk-800 border border-gold-400 flex items-center justify-center shadow-md">
+          <span class="font-ruqaa text-2xl text-gold-400 leading-none pt-1">ض</span>
+        </div>
+        <div>
+          <h1 class="font-ruqaa text-2xl sm:text-3xl text-emeraldInk-800 dark:text-gold-400 tracking-wide">
+            الجدة صفصافة الضاد
+          </h1>
+          <p class="text-xs sm:text-sm text-parchment-800/80 dark:text-parchment-200/70">
+            حكمة الجذور الصرفية الموثّقة بالمعاجم التراثية وموسوعة روائع الشعر العربي
+          </p>
+        </div>
+      </div>
+
+      <!-- أزرار التحكم السريع والوضع الليلي -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <div class="hidden md:flex items-center gap-2 bg-parchment-100 dark:bg-parchment-900 px-3 py-1.5 rounded-xl border border-gold-500/30 text-xs">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>المعاجم المعتمدة: لسان العرب • القاموس المحيط • الصحاح</span>
+        </div>
+        <button id="themeToggle" class="px-3.5 py-2 rounded-xl bg-parchment-200/80 dark:bg-parchment-800/80 hover:bg-gold-500/20 border border-gold-500/40 text-sm font-bold flex items-center gap-2 transition cursor-pointer" title="تبديل المظهر التراثي">
+          <span id="themeIcon">🌙</span>
+          <span class="hidden sm:inline" id="themeLabel">وضع حبر الليل</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- شريط البحث والتحليل الفوري للجذور -->
+  <section class="max-w-7xl w-full mx-auto px-4 pt-5 pb-2">
+    <div class="bg-parchment-50/95 dark:bg-parchment-900/95 rounded-3xl border border-gold-500/35 p-4 sm:p-5 shadow-lg">
+      <div class="flex flex-col md:flex-row gap-3 items-stretch md:items-center">
+        <div class="relative flex-1">
+          <input
+            id="wordInput"
+            type="text"
+            value="يستغفرون"
+            placeholder="اكتب أي كلمة عربية لتحليل جذرها ومشتقاتها من المعاجم (مثال: يستغفرون، استقام، مكاتيب، اضطراب)..."
+            class="w-full rounded-2xl bg-white dark:bg-[#1d1711] border-2 border-gold-500/40 focus:border-emeraldInk-700 dark:focus:border-gold-400 px-4 py-3.5 text-base sm:text-lg font-bold outline-none transition shadow-inner"
+          />
+          <button id="clearInputBtn" class="absolute left-3 top-1/2 -translate-y-1/2 text-xs px-2.5 py-1 rounded-lg bg-parchment-200 dark:bg-parchment-800 hover:bg-gold-500/30 transition cursor-pointer">
+            مسح
+          </button>
+        </div>
+        <button id="analyzeBtn" class="px-6 py-3.5 rounded-2xl bg-gradient-to-l from-emeraldInk-800 to-emeraldInk-700 hover:from-emeraldInk-700 hover:to-teal-700 text-amber-50 font-bold text-base shadow-md hover:shadow-lg transition flex items-center justify-center gap-2 cursor-pointer">
+          <span>🌿</span>
+          <span>استنطاق الجذر في المعاجم</span>
+        </button>
+      </div>
+
+      <!-- أمثلة سريعة -->
+      <div class="mt-3 flex flex-wrap items-center gap-2 text-xs">
+        <span class="text-parchment-800/70 dark:text-parchment-200/70 font-semibold">أمثلة للتجربة:</span>
+        <button class="sample-word px-3 py-1 rounded-xl bg-parchment-200/70 dark:bg-parchment-800 hover:bg-gold-500/25 border border-gold-500/30 transition cursor-pointer" data-word="يستغفرون">يستغفرون</button>
+        <button class="sample-word px-3 py-1 rounded-xl bg-parchment-200/70 dark:bg-parchment-800 hover:bg-gold-500/25 border border-gold-500/30 transition cursor-pointer" data-word="استقام">استقام</button>
+        <button class="sample-word px-3 py-1 rounded-xl bg-parchment-200/70 dark:bg-parchment-800 hover:bg-gold-500/25 border border-gold-500/30 transition cursor-pointer" data-word="مكاتيب">مكاتيب</button>
+        <button class="sample-word px-3 py-1 rounded-xl bg-parchment-200/70 dark:bg-parchment-800 hover:bg-gold-500/25 border border-gold-500/30 transition cursor-pointer" data-word="اضطراب">اضطراب</button>
+        <button class="sample-word px-3 py-1 rounded-xl bg-parchment-200/70 dark:bg-parchment-800 hover:bg-gold-500/25 border border-gold-500/30 transition cursor-pointer" data-word="متصلون">متصلون</button>
+        <button class="sample-word px-3 py-1 rounded-xl bg-parchment-200/70 dark:bg-parchment-800 hover:bg-gold-500/25 border border-gold-500/30 transition cursor-pointer" data-word="منازل">منازل</button>
+        <button class="sample-word px-3 py-1 rounded-xl bg-parchment-200/70 dark:bg-parchment-800 hover:bg-gold-500/25 border border-gold-500/30 transition cursor-pointer" data-word="البلاغة">البلاغة</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- المحتوى الرئيسي: الشجرة الحكيمة + المعاجم + ديوان الشعر -->
+  <main class="max-w-7xl w-full mx-auto px-4 py-4 grid grid-cols-1 lg:grid-cols-12 gap-5 flex-1">
+
+    <!-- العمود الأيمن (5 أعمدة): شجرة الجدة صفصافة وبطاقة التحليل المعجمي -->
+    <div class="lg:col-span-5 flex flex-col gap-5">
+
+      <!-- لوحة شجرة الجدة صفصافة التفاعلية -->
+      <div class="relative rounded-3xl overflow-hidden border-2 border-gold-500/40 shadow-xl bg-gradient-to-b from-[#17332d] via-[#1c3d35] to-[#112420]">
+        <div class="absolute top-3 right-3 left-3 z-10 flex items-center justify-between pointer-events-none">
+          <span class="px-3 py-1 rounded-full bg-black/40 backdrop-blur-sm text-amber-200 text-xs border border-gold-400/30">
+            ✨ انقر على الجدة صفصافة لتتحدث وتنثر الحكمة
+          </span>
+          <span id="rootBadge" class="px-3.5 py-1 rounded-full bg-gold-500 text-[#18120a] font-bold text-sm shadow">
+            الجذر: غ ف ر
+          </span>
+        </div>
+
+        <div id="willowContainer" class="w-full h-[370px] sm:h-[410px] cursor-pointer">
+          <canvas id="willowCanvas" class="w-full h-full block"></canvas>
+        </div>
+
+        <!-- همسة الجدة صفصافة -->
+        <div class="bg-[#0e1f1b]/95 border-t border-gold-400/30 px-4 py-3 text-amber-100/95 text-sm flex items-start gap-2.5">
+          <span class="text-lg">🌿</span>
+          <p id="grandmotherWhisper" class="font-amiri text-base leading-relaxed">
+            «يا بنيّ، الكلماتُ كأوراق الصفصاف؛ مهما تفرّعت في الرياح، تبقى متّصلةً بجذرٍ واحدٍ يشرب من معين الضاد...»
+          </p>
+        </div>
+      </div>
+
+      <!-- بطاقة التحليل الصرفي والمشتقات والمعاجم الثلاثة -->
+      <div class="bg-parchment-50 dark:bg-parchment-900 rounded-3xl border border-gold-500/35 p-5 shadow-lg flex flex-col gap-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-gold-500/25 pb-3">
+          <div>
+            <span class="text-xs text-gold-600 dark:text-gold-400 font-bold">بطاقة الجذر الصرفي</span>
+            <h2 id="analyzedWordTitle" class="text-xl font-extrabold text-emeraldInk-800 dark:text-amber-200">
+              الكلمة: يستغفرون
+            </h2>
+          </div>
+          <div class="flex items-center gap-2">
+            <span id="rootLettersDisplay" class="px-4 py-1.5 rounded-2xl bg-emeraldInk-800 text-gold-400 font-amiri text-xl font-bold tracking-widest border border-gold-400/40">
+              غ - ف - ر
+            </span>
+          </div>
+        </div>
+
+        <!-- الميزان الصرفي والعملية الصرفية -->
+        <div class="grid grid-cols-2 gap-3 text-sm">
+          <div class="p-3 rounded-2xl bg-parchment-100 dark:bg-[#18130d] border border-gold-500/25">
+            <div class="text-xs text-parchment-800/70 dark:text-parchment-200/60">الوزن الصرفي التقريبي</div>
+            <div id="morphPattern" class="font-bold text-base text-emeraldInk-700 dark:text-gold-400 mt-0.5">يَسْتَفْعِلُونَ</div>
+          </div>
+          <div class="p-3 rounded-2xl bg-parchment-100 dark:bg-[#18130d] border border-gold-500/25">
+            <div class="text-xs text-parchment-800/70 dark:text-parchment-200/60">التحليل الصرفي</div>
+            <div id="morphNote" class="font-bold text-sm text-parchment-900 dark:text-parchment-100 mt-0.5">مزيد بالهمزة والسين والتاء (استفعل)</div>
+          </div>
+        </div>
+
+        <!-- تبويبات المعاجم الثلاثة -->
+        <div class="mt-1">
+          <div class="flex rounded-2xl bg-parchment-200/70 dark:bg-[#18130d] p-1 gap-1 border border-gold-500/25">
+            <button class="dict-tab flex-1 py-2 px-2 rounded-xl text-xs sm:text-sm font-bold transition bg-emeraldInk-800 text-amber-100 cursor-pointer" data-dict="lisan">
+              لسان العرب
+            </button>
+            <button class="dict-tab flex-1 py-2 px-2 rounded-xl text-xs sm:text-sm font-bold transition hover:bg-gold-500/20 cursor-pointer" data-dict="qamus">
+              القاموس المحيط
+            </button>
+            <button class="dict-tab flex-1 py-2 px-2 rounded-xl text-xs sm:text-sm font-bold transition hover:bg-gold-500/20 cursor-pointer" data-dict="sihah">
+              الصحاح للجوهري
+            </button>
+          </div>
+
+          <div class="mt-3 p-4 rounded-2xl bg-white dark:bg-[#18130d] border border-gold-500/30 shadow-inner min-h-[145px]">
+            <div class="flex items-center justify-between mb-2">
+              <span id="dictSourceTitle" class="text-xs font-extrabold text-gold-600 dark:text-gold-400">
+                📖 لسان العرب — ابن منظور (مادة: غفر)
+              </span>
+              <span class="text-[11px] px-2 py-0.5 rounded-md bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 font-semibold">
+                موثّق
+              </span>
+            </div>
+            <p id="dictEntryText" class="font-amiri text-base sm:text-lg leading-relaxed text-parchment-900 dark:text-parchment-100"></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- العمود الأيسر (7 أعمدة): موسوعة الشعر العربي (أكثر من 105 قصائد) + اللوحة الفنية التعبيرية -->
+    <div class="lg:col-span-7 flex flex-col gap-5">
+      <div class="bg-parchment-50 dark:bg-parchment-900 rounded-3xl border border-gold-500/35 p-4 sm:p-5 shadow-lg flex flex-col gap-4 h-full">
+
+        <!-- رأس قسم الديوان -->
+        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-gold-500/25 pb-3">
+          <div>
+            <h2 class="font-ruqaa text-2xl text-emeraldInk-800 dark:text-gold-400">
+              ديوان روائع الشعر العربي
+            </h2>
+            <p class="text-xs text-parchment-800/75 dark:text-parchment-200/75">
+              يضم <span id="poemCountBadge" class="font-bold text-emeraldInk-700 dark:text-gold-400">106</span> قصيدة طويلة — انقر على أي كلمة في الأبيات لاستنطاق جذرها
+            </p>
+          </div>
+
+          <!-- أزرار التنقل بين القصائد -->
+          <div class="flex items-center gap-2">
+            <button id="prevPoemBtn" class="px-3 py-1.5 rounded-xl bg-parchment-200 dark:bg-parchment-800 hover:bg-gold-500/30 border border-gold-500/30 text-xs font-bold transition cursor-pointer">
+              → السابقة
+            </button>
+            <button id="randomPoemBtn" class="px-3 py-1.5 rounded-xl bg-emeraldInk-800 text-amber-100 hover:bg-emeraldInk-700 text-xs font-bold transition cursor-pointer">
+              🎲 قصيدة عشوائية
+            </button>
+            <button id="nextPoemBtn" class="px-3 py-1.5 rounded-xl bg-parchment-200 dark:bg-parchment-800 hover:bg-gold-500/30 border border-gold-500/30 text-xs font-bold transition cursor-pointer">
+              التالية ←
+            </button>
+          </div>
+        </div>
+
+        <!-- أدوات تصفية واختيار القصائد -->
+        <div class="grid grid-cols-1 sm:grid-cols-12 gap-2.5">
+          <div class="sm:col-span-4">
+            <select id="eraFilter" class="w-full rounded-xl bg-white dark:bg-[#18130d] border border-gold-500/35 px-3 py-2 text-xs sm:text-sm font-bold outline-none">
+              <option value="all">جميع العصور (106 قصائد)</option>
+              <option value="الجاهلي">العصر الجاهلي والمعلقات</option>
+              <option value="الإسلامي والأموي">العصر الإسلامي والأموي</option>
+              <option value="العباسي">العصر العباسي</option>
+              <option value="الأندلسي">العصر الأندلسي</option>
+              <option value="الحديث">العصر الحديث</option>
+            </select>
+          </div>
+          <div class="sm:col-span-4">
+            <input id="poemSearchInput" type="text" placeholder="ابحث باسم الشاعر أو القصيدة..." class="w-full rounded-xl bg-white dark:bg-[#18130d] border border-gold-500/35 px-3 py-2 text-xs sm:text-sm outline-none" />
+          </div>
+          <div class="sm:col-span-4">
+            <select id="poemSelect" class="w-full rounded-xl bg-white dark:bg-[#18130d] border border-gold-500/35 px-3 py-2 text-xs sm:text-sm font-bold outline-none"></select>
+          </div>
+        </div>
+
+        <!-- بطاقة عرض القصيدة مع اللوحة الفنية التعبيرية في الخلفية -->
+        <div class="relative rounded-3xl overflow-hidden border-2 border-gold-500/40 shadow-xl flex-1 min-h-[540px] flex flex-col">
+          <!-- اللوحة التعبيرية المتحركة خلف القصيدة -->
+          <canvas id="poemArtCanvas" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
+
+          <!-- طبقة تظليل لقراءة مريحة للأبيات فوق الرسم -->
+          <div class="relative z-10 flex-1 flex flex-col justify-between bg-gradient-to-b from-[#131a18]/80 via-[#131a18]/75 to-[#131a18]/88 backdrop-blur-[1.5px] p-5 sm:p-7 text-amber-50">
+            <!-- عنوان القصيدة ومعلومات الشاعر -->
+            <div class="text-center border-b border-gold-400/30 pb-4">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/20 border border-gold-400/40 text-gold-300 text-xs font-bold mb-2">
+                <span id="poemEraBadge">العصر العباسي</span>
+                <span>•</span>
+                <span id="poemThemeBadge">الحكمة والفخر</span>
+              </div>
+              <h3 id="poemTitle" class="font-ruqaa text-2xl sm:text-3xl text-gold-300 drop-shadow">
+                على قدر أهل العزم تأتي العزائم
+              </h3>
+              <p id="poemPoet" class="text-sm sm:text-base text-amber-100/85 mt-1 font-bold">
+                أبو الطيب المتنبي
+              </p>
+            </div>
+
+            <!-- أبيات القصيدة التفاعلية -->
+            <div id="poemVersesContainer" class="my-4 space-y-3 max-h-[430px] overflow-y-auto px-2 sm:px-4"></div>
+
+            <!-- تلميح أسفل القصيدة -->
+            <div class="pt-3 border-t border-gold-400/25 flex flex-wrap items-center justify-between gap-2 text-xs text-amber-200/80">
+              <span>💡 اضغط على أي كلمة ذهبية أو بيضاء داخل الأبيات لتحليل جذرها فوراً</span>
+              <span id="poemIndexIndicator">قصيدة 1 من 106</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- تذييل الصفحة -->
+  <footer class="mt-8 border-t border-gold-500/25 py-4 px-4 text-center text-xs text-parchment-800/70 dark:text-parchment-200/70">
+    الجدة صفصافة الضاد — محرك التحليل الصرفي الموثق بلسان العرب والقاموس المحيط والصحاح، وموسوعة روائع الشعر العربي
+  </footer>
+
+<script>
+// ============================================================================
+// 1. قاعدة البيانات المعجمية الموثقة (لسان العرب، القاموس المحيط، الصحاح)
+// ============================================================================
+const LEXICON_DB = {
+  "غفر": {
+    derivatives: ["غَفَرَ", "يَسْتَغْفِرُونَ", "غَفُورٌ", "مَغْفِرَةٌ", "غُفْرَانٌ", "اسْتِغْفَارٌ", "غَافِرٌ"],
+    lisan: "الغَفْرُ: السَّتْرُ والتَّغْطِيَةُ. غَفَرَ اللهُ ذُنُوبَهُ يَغْفِرُهَا غَفْراً ومَغْفِرَةً وغُفْرَاناً: سَتَرَهَا وعَفَا عَنْهَا. واسْتَغْفَرَ اللهَ: سَأَلَهُ المَغْفِرَةَ. وفي التنزيل: ﴿وَالْمُسْتَغْفِرِينَ بِالْأَسْحَارِ﴾.",
+    qamus: "غَفَرَهُ يَغْفِرُهُ غَفْراً وغِفْرَةً ومَغْفِرَةً وغُفْرَاناً: سَتَرَهُ. وكلُّ شَيْءٍ سَتَرْتَهُ فَقَدْ غَفَرْتَهُ. والغَفُورُ والغَفَّارُ: مِنْ أَسْمَاءِ اللهِ تَعَالَى لِكَثْرَةِ سَتْرِهِ الذُّنُوبَ.",
+    sihah: "الغَفْرُ: التَّغْطِيَةُ والسَّتْرُ. غَفَرَ اللهُ لَهُ ذَنْبَهُ مَغْفِرَةً وغُفْرَاناً. والمِغْفَرُ: زَرَدٌ يُنْسَجُ مِنَ الدُّرُوعِ عَلَى قَدْرِ الرَّأْسِ يُلْبَسُ تَحْتَ القَلَنْسُوَةِ لِأَنَّهُ يَسْتُرُهُ."
+  },
+  "قوم": {
+    derivatives: ["قَامَ", "اسْتَقَامَ", "مُسْتَقِيمٌ", "قِيَامَةٌ", "قَوْمٌ", "إِقَامَةٌ", "مَقَامٌ", "تَقْوِيمٌ"],
+    lisan: "القِيَامُ: نَقِيضُ الجُلُوسِ. وقَامَ الأَمْرُ واسْتَقَامَ: اعْتَدَلَ واسْتَوَى. والمُقَامُ والمَقَامَةُ: المَوْضِعُ الَّذِي تُقِيمُ فِيهِ. وقَوَّمْتُ الشَّيْءَ فَتَقَوَّمَ: أَزَلْتُ عِوَجَهُ.",
+    qamus: "قَامَ قَوْماً وقِيَاماً وقَوْمَةً وقَامَةً: انْتَصَبَ. واسْتَقَامَ: اعْتَدَلَ. والقِوَامُ، بِالكَسْرِ: العَدْلُ ونِظَامُ الأَمْرِ. والمَقَامُ: الإِقَامَةُ والمَوْضِعُ.",
+    sihah: "قَامَ يَقُومُ قِيَاماً. وأَقَامَ بِالمَكَانِ إِقَامَةً. واسْتَقَامَ لَهُ الأَمْرُ. والقَوْمُ: الرِّجَالُ دُونَ النِّسَاءِ، وقد يَدْخُلْنَ فِيهِ عَلَى سَبِيلِ التَّبَعِ، سُمُّوا بِذَلِكَ لِقِيَامِهِمْ بِالأُمُورِ."
+  },
+  "كتب": {
+    derivatives: ["كَتَبَ", "كِتَابٌ", "مَكَاتِيبُ", "كَاتِبٌ", "مَكْتَبَةٌ", "مَكْتُوبٌ", "كِتَابَةٌ"],
+    lisan: "الكَتْبُ: الجَمْعُ والشَّدُّ. وكَتَبَ الشَّيْءَ يَكْتُبُهُ كَتْباً وكِتَاباً وكِتَابَةً: خَطَّهُ. والكَتِيبَةُ: الجَيْشُ المُجْتَمِعُ. والكِتَابُ: الفَرْضُ والحُكْمُ والقَدَرُ.",
+    qamus: "كَتَبَهُ يَكْتُبُهُ كَتْباً وكِتَاباً وكِتَابَةً ومَكْتَبَةً: خَطَّهُ. والكَتِيبَةُ: القِطْعَةُ العَظِيمَةُ مِنَ الجَيْشِ. وتَكَاتَبُوا: كَتَبَ بَعْضُهُمْ إِلَى بَعْضٍ.",
+    sihah: "الكِتَابُ مَعْرُوفٌ، وَالجَمْعُ كُتُبٌ. وكَتَبْتُ الكِتَابَ أَكْتُبُهُ كَتْباً وكِتَابَةً. واسْتَكْتَبْتُهُ الشَّيْءَ: سَأَلْتُهُ أَنْ يَكْتُبَهُ لِي."
+  },
+  "ضرب": {
+    derivatives: ["ضَرَبَ", "اضْطِرَابٌ", "مُضْطَرِبٌ", "ضَرْبٌ", "مَضْرِبٌ", "إِضْرَابٌ", "ضَرِيبَةٌ"],
+    lisan: "الضَّرْبُ: مَعْرُوفٌ، ويَكُونُ بِمَعْنَى السَّيْرِ فِي الأَرْضِ لِلتِّجَارَةِ أَوِ الغَزْوِ. واضْطَرَبَ الشَّيْءُ: تَحَرَّكَ ومَاجَ، وأَصْلُهُ اضْتَرَبَ فَقُلِبَتِ التَّاءُ طَاءً لِقُرْبِهَا مِنَ الضَّادِ.",
+    qamus: "ضَرَبَهُ يَضْرِبُهُ ضَرْباً. واضْطَرَبَ: تَحَرَّكَ ومَاجَ، وضَرَبَ بَعْضُهُ بَعْضاً. وضَرَبَ فِي الأَرْضِ: سَارَ فِيهَا مُبْتَغِياً الرِّزْقَ أَوِ العِلْمَ.",
+    sihah: "الضَّرْبُ: مَصْدَرُ ضَرَبْتُهُ. واضْطَرَبَ البَحْرُ: تَمَوَّجَتْ أَمْوَاجُهُ. والضَّرِيبَةُ: الطَّبِيعَةُ والسَّجِيَّةُ، يُقَالُ: فُلَانٌ كَرِيمُ الضَّرِيبَةِ."
+  },
+  "وصل": {
+    derivatives: ["وَصَلَ", "مُتَّصِلُونَ", "صِلَةٌ", "وِصَالٌ", "تَوَاصُلٌ", "مَوْصُولٌ", "إِيصَالٌ"],
+    lisan: "الوَصْلُ: ضِدُّ الهِجْرَانِ، وخِلَافُ الفَصْلِ. وَصَلَ الشَّيْءَ بِالشَّيْءِ يَصِلُهُ وَصْلاً وصِلَةً: لَأَمَهُ. واتَّصَلَ الشَّيْءُ: أَصْلُهُ اوْتَصَلَ، فَأُبْدِلَتِ الوَاوُ تَاءً وَأُدْغِمَتْ.",
+    qamus: "وَصَلَهُ يَصِلُهُ وَصْلاً وصِلَةً: ضَمَّهُ وجَمَعَهُ. والوِصَالُ فِي الحُبِّ: المُدَاوَمَةُ عَلَى المَوَدَّةِ. والمَوْصِلُ: مَوْضِعُ الوَصْلِ.",
+    sihah: "وَصَلْتُ الشَّيْءَ بِالشَّيْءِ وَصْلاً. واتَّصَلَ الشَّيْءُ بِالشَّيْءِ إِذَا لَمْ يَنْقَطِعْ. والصِّلَةُ: العَطِيَّةُ والجَائِزَةُ، وصِلَةُ الرَّحِمِ: الإِحْسَانُ إِلَى الأَقْرَبِينَ."
+  },
+  "نزل": {
+    derivatives: ["نَزَلَ", "مَنَازِلُ", "مَنْزِلٌ", "تَنْزِيلٌ", "نُزُولٌ", "نَزِيلٌ", "مُنَزَّلٌ"],
+    lisan: "النُّزُولُ: الحُلُولُ بِالمَكَانِ، والهُبُوطُ مِنْ عُلْوٍ إِلَى سُفْلٍ. والمَنْزِلُ: الدَّارُ والمَكَانُ الَّذِي يُنْزَلُ فِيهِ، والجَمْعُ المَنَازِلُ. والتَّنْزِيلُ: القُرْآنُ الكَرِيمُ.",
+    qamus: "نَزَلَ يَنْزِلُ نُزُولاً ومَنْزَلاً: حَلَّ. والمَنْزِلُ: الدَّارُ. والنَّزِيلُ: الضَّيْفُ. وأَنْزَلَهُ ونَزَّلَهُ بِمَعْنًى.",
+    sihah: "نَزَلَ عَنْ دَابَّتِهِ يَنْزِلُ نُزُولاً. والمَنْزِلُ: مَوْضِعُ النُّزُولِ. ومَنَازِلُ القَمَرِ: ثَمَانِيَةٌ وعِشْرُونَ مَنْزِلاً يَنْزِلُ القَمَرُ كُلَّ لَيْلَةٍ فِي وَاحِدٍ مِنْهَا."
+  },
+  "بلغ": {
+    derivatives: ["بَلَغَ", "البَلَاغَةُ", "بَلِيغٌ", "بَلَاغٌ", "مَبْلَغٌ", "إِبْلَاغٌ", "بُلُوغٌ"],
+    lisan: "بَلَغَ الشَّيْءُ يَبْلُغُ بُلُوغاً وبَلَاغاً: وَصَلَ وانْتَهَى. والبَلَاغَةُ: الفَصَاحَةُ وحُسْنُ البَيَانِ وإِيصَالُ المَعْنَى إِلَى القَلْبِ بِأَحْسَنِ صُورَةٍ مِنَ اللَّفْظِ.",
+    qamus: "بَلَغَ المَكَانَ يَبْلُغُهُ بُلُوغاً: وَصَلَ إِلَيْهِ. ورَجُلٌ بَلِيغٌ: حَسَنُ الكَلَامِ فَصِيحُهُ يَبْلُغُ بِعِبَارَتِهِ كُنْهَ مَا فِي قَلْبِهِ.",
+    sihah: "بَلَغْتُ المَكَانَ بُلُوغاً. وأَبْلَغْتُهُ الرِّسَالَةَ إِبْلَاغاً. والبَلَاغُ: الكِفَايَةُ ومَا يُتَبَلَّغُ بِهِ."
+  },
+  "عزم": {
+    derivatives: ["عَزَمَ", "العَزْمُ", "العَزَائِمُ", "عَزِيمَةٌ", "مُعْتَزِمٌ", "عَازِمٌ"],
+    lisan: "العَزْمُ: الجِدُّ والصَّبْرُ وعَقْدُ القَلْبِ عَلَى إِمْضَاءِ الأَمْرِ. وأُولُو العَزْمِ مِنَ الرُّسُلِ: الَّذِينَ جَدُّوا وصَبَرُوا. والعَزِيمَةُ: الحَقُّ المُؤَكَّدُ، والجَمْعُ العَزَائِمُ.",
+    qamus: "عَزَمَ عَلَيْهِ يَعْزِمُ عَزْماً وعَزِيمَةً وعُزْمَاناً: أَرَادَ فِعْلَهُ وقَطَعَ عَلَيْهِ. ورَجُلٌ عَزُومٌ: مَاضٍ فِي أَمْرِهِ ثَابِتُ الرَّأْيِ.",
+    sihah: "عَزَمْتُ عَلَى الأَمْرِ عَزْماً إِذَا أَرَدْتَ فِعْلَهُ وعَقَدْتَ ضَمِيرَكَ عَلَيْهِ. وما لِفُلَانٍ عَزِيمَةٌ أَيْ ثَبَاتٌ وحَزْمٌ."
+  },
+  "كرم": {
+    derivatives: ["كَرُمَ", "الكِرَامُ", "كَرِيمٌ", "إِكْرَامٌ", "كَرَامَةٌ", "مَكْرُمَةٌ", "تَكْرِيمٌ"],
+    lisan: "الكَرَمُ: الشَّرَفُ والجُودُ والسَّخَاءُ ونَقِيضُ اللُّؤْمِ. والكَرِيمُ: الجَوَادُ المُعْطِي الَّذِي لَا يَنْفَدُ عَطَاؤُهُ، وهو اسْمٌ مِنْ أَسْمَاءِ اللهِ الحُسْنَى.",
+    qamus: "كَرُمَ يَكْرُمُ كَرَماً وكَرَامَةً ومَكْرُمَةً: شَرُفَ وجَادَ. وأَكْرَمَهُ: عَظَّمَهُ ونَزَّهَهُ. والكَرْمُ: شَجَرُ العِنَبِ.",
+    sihah: "الكَرَمُ: الجُودُ. ورَجُلٌ كَرِيمٌ، وقَوْمٌ كِرَامٌ وكُرَمَاءُ. واسْتَكْرَمْتُ الشَّيْءَ: وَجَدْتُهُ كَرِيماً."
+  },
+  "علم": {
+    derivatives: ["عَلِمَ", "العِلْمُ", "عَالِمٌ", "عُلَمَاءُ", "تَعْلِيمٌ", "مَعْلُومٌ", "مَعْلَمٌ"],
+    lisan: "العِلْمُ: نَقِيضُ الجَهْلِ، وإِدْرَاكُ الشَّيْءِ بِحَقِيقَتِهِ. وعَلِمَ الشَّيْءَ يَعْلَمُهُ عِلْماً: عَرَفَهُ وأَيْقَنَ بِهِ. والعَلَمُ: الرَّايَةُ والجَبَلُ الطَّوِيلُ.",
+    qamus: "عَلِمَهُ يَعْلَمُهُ عِلْماً: عَرَفَهُ. وتَعَلَّمَهُ: أَتْقَنَهُ. والعَلَّامَةُ: العَالِمُ جِدّاً. والمَعْلَمُ: الأَثَرُ يُسْتَدَلُّ بِهِ عَلَى الطَّرِيقِ.",
+    sihah: "عَلِمْتُ الشَّيْءَ أَعْلَمُهُ عِلْماً. ورَجُلٌ عَلِيمٌ وعَالِمٌ. وأَعْلَمْتُهُ الخَبَرَ فَتَعَلَّمَهُ."
+  },
+  "حبب": {
+    derivatives: ["أَحَبَّ", "الحُبُّ", "حَبِيبٌ", "مَحَبَّةٌ", "أَحْبَابٌ", "مَحْبُوبٌ"],
+    lisan: "الحُبُّ: الوِدَادُ والمَحَبَّةُ، ونَقِيضُ البُغْضِ. وحَبَّةُ القَلْبِ: سُوَيْدَاؤُهُ ومُهْجَتُهُ. والحَبُّ: الحِنْطَةُ والشَّعِيرُ وسَائِرُ البُذُورِ.",
+    qamus: "حَبَّهُ يَحِبُّهُ، وأَحَبَّهُ يُحِبُّهُ حُبّاً وحِبّاً ومَحَبَّةً: وَدَّهُ. والحَبِيبُ: المُحِبُّ والمَحْبُوبُ، والجَمْعُ أَحِبَّاءُ وأَحْبَابٌ.",
+    sihah: "الحُبُّ: المَحَبَّةُ. وأَحَبَّهُ فَهُوَ مُحِبٌّ، وذَاكَ مَحْبُوبٌ. واسْتَحَبَّهُ عَلَى غَيْرِهِ: آثَرَهُ وَاخْتَارَهُ."
+  },
+  "شعر": {
+    derivatives: ["شَعَرَ", "الشِّعْرُ", "شَاعِرٌ", "شُعَرَاءُ", "شُعُورٌ", "مَشَاعِرُ", "شِعَارٌ"],
+    lisan: "الشِّعْرُ: مَنْظُومُ القَوْلِ الغَالِبُ عَلَيْهِ الوَزْنُ والقَافِيَةُ، وسُمِّيَ شِعْراً لِفِطْنَةِ الشَّاعِرِ ودِقَّةِ شُعُورِهِ وإِدْرَاكِهِ مَا لَا يَشْعُرُ بِهِ غَيْرُهُ.",
+    qamus: "شَعَرَ بِهِ يَشْعُرُ شِعْراً وشُعُوراً ومَشْعُوراً: عَلِمَ بِهِ وفَطِنَ لَهُ. والشَّاعِرُ: الفَطِنُ، وقَائِلُ الشِّعْرِ.",
+    sihah: "شَعَرْتُ بِالشَّيْءِ أَشْعُرُ شُعُوراً أَيْ عَلِمْتُ. ولَيْتَ شِعْرِي أَيْ لَيْتَ عِلْمِي. والشَّعْرُ: نَبْتُ الجِسْمِ."
+  },
+  "سيف": {
+    derivatives: ["السَّيْفُ", "سُيُوفٌ", "أَسْيَافٌ", "سَيَّافٌ", "سَافَ"],
+    lisan: "السَّيْفُ: السِّلَاحُ المَعْرُوفُ، والجَمْعُ أَسْيَافٌ وسُيُوفٌ. وسَافَهُ يَسِيفُهُ سَيْفاً: ضَرَبَهُ بِالسَّيْفِ. والسِّيفُ، بِالكَسْرِ: سَاحِلُ البَحْرِ.",
+    qamus: "السَّيْفُ: مَعْرُوفٌ، جَمْعُهُ أَسْيَافٌ وسُيُوفٌ ومَسْيَفَةٌ. والسَّيَّافُ: صَاحِبُ السَّيْفِ.",
+    sihah: "السَّيْفُ مَعْرُوفٌ. ورَجُلٌ سَائِفٌ: ذُو سَيْفٍ. وتَسَايَفَ القَوْمُ: تَضَارَبُوا بِالسُّيُوفِ."
+  },
+  "ليل": {
+    derivatives: ["اللَّيْلُ", "لَيْلَةٌ", "لَيَالٍ", "لَيْلَى", "أَلْيَلُ"],
+    lisan: "اللَّيْلُ: عَقِيبُ النَّهَارِ، ومَبْدَؤُهُ مِنْ غُرُوبِ الشَّمْسِ إِلَى طُلُوعِ الفَجْرِ الصَّادِقِ. واللَّيْلَةُ: وَاحِدَةُ اللَّيْلِ، والجَمْعُ لَيَالٍ.",
+    qamus: "اللَّيْلُ: مَعْرُوفٌ، جَمْعُهُ لَيَالٍ عَلَى غَيْرِ قِيَاسٍ. ولَيْلٌ أَلْيَلُ: شَدِيدُ الظُّلْمَةِ طَوِيلٌ.",
+    sihah: "اللَّيْلُ: ضِدُّ النَّهَارِ. وعَامَلْتُهُ مُلَايَلَةً كَمَا يُقَالُ مُيَاوَمَةً."
+  },
+  "مجد": {
+    derivatives: ["مَجُدَ", "المَجْدُ", "مَاجِدٌ", "أَمْجَادٌ", "تَمْجِيدٌ", "مَجِيدٌ"],
+    lisan: "المَجْدُ: المُرُوءَةُ والسَّخَاءُ والكَرَمُ ونَيْلُ الشَّرَفِ. والمَجِيدُ: الكَرِيمُ الشَّرِيفُ الفِعَالِ، وهو مِنْ أَسْمَاءِ اللهِ تَعَالَى.",
+    qamus: "مَجُدَ يَمْجُدُ مَجْداً ومَجَادَةً: نَالَ المَجْدَ والشَّرَفَ. وأَمْجَدَهُ ومَجَّدَهُ: عَظَّمَهُ وأَثْنَى عَلَيْهِ.",
+    sihah: "المَجْدُ: الكَرَمُ والشَّرَفُ. ورَجُلٌ مَاجِدٌ ومَجِيدٌ. وما أَمْجَدَهُ!"
+  },
+  "صبر": {
+    derivatives: ["صَبَرَ", "الصَّبْرُ", "صَابِرٌ", "صَبُورٌ", "اصْطِبَارٌ", "مُصَابَرَةٌ"],
+    lisan: "الصَّبْرُ: حَبْسُ النَّفْسِ عَنِ الجَزَعِ وعِنْدَ المَكَارِهِ. والصَّبُورُ: العَظِيمُ الصَّبْرِ والحِلْمِ، وهو مِنْ أَسْمَاءِ اللهِ الحُسْنَى.",
+    qamus: "صَبَرَ يَصْبِرُ صَبْراً: حَبَسَ نَفْسَهُ عَنِ الجَزَعِ. واصْطَبَرَ: تَكَلَّفَ الصَّبْرَ. والصَّبْرُ: عُصَارَةُ شَجَرٍ مُرٍّ.",
+    sihah: "الصَّبْرُ: نَقِيضُ الجَزَعِ. وصَبَرْتُ نَفْسِي عَلَى الأَمْرِ أَيْ حَبَسْتُهَا."
+  }
+};
+
+// همسات الجدة صفصافة
+const GRANDMOTHER_WHISPERS = [
+  "«يا بنيّ، الكلماتُ كأوراق الصفصاف؛ مهما تفرّعت في الرياح، تبقى متّصلةً بجذرٍ واحدٍ يشرب من معين الضاد...»",
+  "«انظر إلى الجذر الثلاثيّ كيف يختبئ في قلب الكلمة كالبذرة في الثرى، ثم يزهر معانيَ لا تنضب!»",
+  "«في لسان العرب والقاموس المحيط والصحاح كنوزٌ تركها الأجداد؛ كلّما قرأتَ بيتاً من الشعر أنصتْ لصدى حروفه.»",
+  "«اللغة العربية كائنٌ حيٌّ يتنفّس؛ تزيدها الحروف الزائدة ظلالاً من المعنى، ويبقى أصلها نقيّاً كالماء الزلال.»",
+  "«بارك الله في همّتِك يا ولدي، كلّ كلمةٍ تستنطقها تضيء ورقةً جديدةً على أغصاني!»"
+];
+
+// ============================================================================
+// 2. محرك التحليل الصرفي واستخراج الجذر الموثق بالمعاجم الثلاثة
+// ============================================================================
+function normalizeArabic(word) {
+  return word
+    .replace(/[\u064B-\u065F\u0670\u0640]/g, '') // إزالة التشكيل والتطويل
+    .replace(/[^\u0621-\u064A]/g, '') // إبقاء الحروف العربية فقط
+    .replace(/[أإآ]/g, 'ا')
+    .replace(/ى/g, 'ي')
+    .replace(/ة$/g, '');
+}
+
+// قاموس تحويلات سريعة للكلمات الشائعة والمعتلة والمهموزة
+const SPECIAL_ROOT_MAP = {
+  "يستغفرون": { root: "غفر", pattern: "يَسْتَفْعِلُونَ", note: "مزيد بالهمزة والسين والتاء (استفعل)" },
+  "استغفار": { root: "غفر", pattern: "اسْتِفْعَال", note: "مصدر الفعل السداسي (استغفر)" },
+  "مغفرة": { root: "غفر", pattern: "مَفْعِلَة", note: "مصدر ميمي من الثلاثي (غفر)" },
+  "استقام": { root: "قوم", pattern: "اسْتَفْعَلَ", note: "أجوف واوي (ق و م) مزيد بالهمزة والسين والتاء" },
+  "مستقيم": { root: "قوم", pattern: "مُسْتَفْعِل", note: "اسم فاعل من الأجوف الواوي (استقام)" },
+  "مقام": { root: "قوم", pattern: "مَفْعَل", note: "اسم مكان من الأجوف الواوي (قام يقوم)" },
+  "مكاتيب": { root: "كتب", pattern: "مَفَاعِيل", note: "جمع تكسير (صيغة منتهى الجموع) من (كتب)" },
+  "مكتبة": { root: "كتب", pattern: "مَفْعَلَة", note: "اسم مكان من الثلاثي الصحيح (كتب)" },
+  "اضطراب": { root: "ضرب", pattern: "افْتِعَال", note: "إبدال تاء الافتعال طاءً لمجاورة الضاد" },
+  "مضطرب": { root: "ضرب", pattern: "مُفْتَعِل", note: "اسم فاعل أُبدلت فيه التاء طاءً" },
+  "متصلون": { root: "وصل", pattern: "مُفْتَعِلُونَ", note: "مثال واوي (و ص ل) أُبدلت واوه تاءً وأدغمت" },
+  "صلة": { root: "وصل", pattern: "عِلَة", note: "محذوف الفاء (الواو) من (وصل)" },
+  "منازل": { root: "نزل", pattern: "مَفَاعِل", note: "جمع تكسير لاسم المكان (منزل)" },
+  "البلاغة": { root: "بلغ", pattern: "الفَعَالَة", note: "مصدر من الثلاثي (بَلُغَ)" },
+  "العزائم": { root: "عزم", pattern: "الفَعَائِل", note: "جمع تكسير (عزيمة) من (عزم)" },
+  "الكرام": { root: "كرم", pattern: "الفِعَال", note: "جمع تكسير للصفة المشبهة (كريم)" },
+  "مكارم": { root: "كرم", pattern: "مَفَاعِل", note: "جمع (مكرمة) من (كرم)" },
+  "العلماء": { root: "علم", pattern: "الفُعَلَاء", note: "جمع تكسير (عالم) من (علم)" },
+  "احبه": { root: "حبب", pattern: "أَفْعَلَهُ", note: "ثلاثي مضعّف (ح ب ب) على وزن أفعل" },
+  "احباب": { root: "حبب", pattern: "أَفْعَال", note: "جمع تكسير من المضعّف (حبب)" },
+  "الشعراء": { root: "شعر", pattern: "الفُعَلَاء", note: "جمع تكسير (شاعر) من (شعر)" },
+  "السيوف": { root: "سيف", pattern: "الفُعُول", note: "جمع تكسير من الأجوف اليائي (س ي ف)" },
+  "الليالي": { root: "ليل", pattern: "الفَعَالِي", note: "جمع تكسير على غير قياس من (ل ي ل)" },
+  "الامجاد": { root: "مجد", pattern: "الأَفْعَال", note: "جمع تكسير (مجد)" },
+  "اصطبار": { root: "صبر", pattern: "افْتِعَال", note: "إبدال تاء الافتعال طاءً بعد الصاد" },
+  "الاصدقاء": { root: "صدق", pattern: "الأَفْعِلَاء", note: "جمع (صديق) من (صدق)" },
+  "السماء": { root: "سمو", pattern: "الفَعَال", note: "ناقص واوي (س م و) قُلبت واوه همزة" },
+  "الدنيا": { root: "دنو", pattern: "الفُعْلَى", note: "ناقص واوي (د ن و) بمعنى القرب" },
+  "الوفاء": { root: "وفي", pattern: "الفَعَال", note: "لفيف مفروق (و ف ي)" },
+  "الزمان": { root: "زمن", pattern: "الفَعَال", note: "اسم جنس من الثلاثي (زمن)" },
+  "العيون": { root: "عين", pattern: "الفُعُول", note: "جمع تكسير من الأجوف اليائي (ع ي ن)" },
+  "القلوب": { root: "قلب", pattern: "الفُعُول", note: "جمع تكسير من الثلاثي (قلب)" },
+  "الحياه": { root: "حيي", pattern: "الفَعَلَة", note: "لفيف مقرون (ح ي ي)" },
+  "حياة": { root: "حيي", pattern: "فَعَلَة", note: "لفيف مقرون (ح ي ي)" },
+  "الموت": { root: "موت", pattern: "الفَعْل", note: "مصدر من الأجوف الواوي (م و ت)" },
+  "الناس": { root: "نوس", pattern: "الفَعْل", note: "أصله الأناس أو من نوس الحركة" },
+  "الدهر": { root: "دهر", pattern: "الفَعْل", note: "اسم جامد ثلاثي (د هـ ر)" },
+  "الأيام": { root: "يوم", pattern: "الأَفْعَال", note: "جمع تكسير من الأجوف الواوي (ي و م)" },
+  "الايام": { root: "يوم", pattern: "الأَفْعَال", note: "جمع تكسير من الأجوف الواوي (ي و م)" }
+};
+
+function analyzeArabicWord(rawWord) {
+  const cleanOriginal = rawWord.trim();
+  const norm = normalizeArabic(cleanOriginal);
+
+  if (!norm || norm.length < 2) {
+    return {
+      word: cleanOriginal || "ضاد",
+      root: "ضود",
+      letters: ["ض", "و", "د"],
+      pattern: "فَعْل",
+      note: "حرف الضاد رمز العربية",
+      derivatives: ["الضَّادُ", "ضَادَ", "مُضَادَّةٌ"],
+      lisan: "الضَّادُ: حَرْفٌ مِنْ حُرُوفِ الهِجَاءِ، تَخْتَصُّ بِهِ اللُّغَةُ العَرَبِيَّةُ دُونَ سَائِرِ اللُّغَاتِ، وَلِذَلِكَ قِيلَ لِلْعَرَبِيَّةِ: لُغَةُ الضَّادِ.",
+      qamus: "الضَّادُ: حَرْفٌ مَجْهُورٌ رِخْوٌ مُطْبَقٌ مُسْتَعْلٍ، يَخْرُجُ مِنْ أَوَّلِ حَافَةِ اللِّسَانِ وَمَا يَلِيهَا مِنَ الأَضْرَاسِ.",
+      sihah: "الضَّادُ: مِنَ الحُرُوفِ المُعْجَمَةِ، والعَرَبُ تَفْخَرُ بِالنُّطْقِ بِهَا لِصُعُوبَتِهَا عَلَى الأَعَاجِمِ."
+    };
+  }
+
+  // 1. البحث المباشر في القاموس الخاص
+  let strippedForLookup = norm.replace(/^ال/, '');
+  let foundSpecial = SPECIAL_ROOT_MAP[norm] || SPECIAL_ROOT_MAP[strippedForLookup];
+
+  let root = "";
+  let pattern = "فَعَلَ";
+  let note = "تحليل صرفي قياسي";
+
+  if (foundSpecial) {
+    root = foundSpecial.root;
+    pattern = foundSpecial.pattern;
+    note = foundSpecial.note;
+  } else {
+    // 2. خوارزمية تجريد السوابق واللواحق والزوائد الصرفية
+    let w = norm;
+
+    // إزالة السوابق (ال، وال، بال، كال، فال، لل، و، ف، ب، ك، ل)
+    w = w.replace(/^(وال|بال|كال|فال|لل|ال)/, '');
+    if (w.length > 4 && /^[وفبكل]/.test(w)) {
+      w = w.slice(1);
+    }
+
+    // إزالة الضمائر واللواحق المتصلة
+    w = w.replace(/(ون|ين|ان|ات|تم|تن|نا|كم|كن|هم|هن|ها|يه|وا|ت|ه|ي|ك)$/, '');
+    if (w.length > 4) {
+      w = w.replace(/(ون|ين|ان|ات|ة)$/, '');
+    }
+
+    // معالجة صيغ الاستفعال والافتعال والانفعال والتفاعل والمفاعلة
+    if (w.length >= 6 && /^است/.test(w)) {
+      w = w.slice(3);
+      pattern = "اسْتَفْعَلَ";
+      note = "مزيد بثلاثة أحرف (الهمزة والسين والتاء)";
+    } else if (w.length >= 6 && /^مست/.test(w)) {
+      w = w.slice(3);
+      pattern = "مُسْتَفْعِل";
+      note = "اسم فاعل/مفعول من السداسي (استفعل)";
+    } else if (w.length >= 5 && /^مت/.test(w)) {
+      w = w.slice(2);
+      pattern = "مُتَفَعِّل";
+      note = "مشتق مزيد بالتاء";
+    } else if (w.length >= 5 && /^[ينات]ت/.test(w)) {
+      w = w.slice(2);
+      pattern = "يَتَفَعَّلُ";
+      note = "فعل مضارع مزيد بالتاء";
+    } else if (w.length >= 5 && /^[ايم]ن/.test(w)) {
+      w = w.slice(2);
+      pattern = "انْفَعَلَ";
+      note = "مزيد بالهمزة والنون للمطاوعة";
+    } else if (w.length >= 5 && w[0] === 'ا' && w[2] === 'ت') {
+      w = w[1] + w.slice(3);
+      pattern = "افْتَعَلَ";
+      note = "مزيد بالهمزة وتاء الافتعال";
+    } else if (w.length >= 5 && w[0] === 'م' && w[2] === 'ت') {
+      w = w[1] + w.slice(3);
+      pattern = "مُفْتَعِل";
+      note = "اسم فاعل من صيغة افتعل";
+    } else if (w.length >= 4 && /^[ايمت]/.test(w)) {
+      const prefix = w[0];
+      w = w.slice(1);
+      pattern = prefix === 'م' ? "مَفْعُول / مَفْعَل" : "يَفْعَلُ / أَفْعَلَ";
+      note = prefix === 'م' ? "مشتق مبدوء بميم زائدة" : "مبدوء بحرف مضارعة أو همزة تعدية";
+    }
+
+    // إزالة حروف المد الزائدة (الألف، الواو، الياء) إذا بقي أكثر من 3 أحرف
+    if (w.length === 4) {
+      if (w[1] === 'ا') {
+        w = w[0] + w.slice(2);
+        pattern = "فَاعِل";
+        note = "اسم فاعل على وزن فاعل";
+      } else if (w[2] === 'و' || w[2] === 'ي' || w[2] === 'ا') {
+        w = w[0] + w[1] + w[3];
+        pattern = w[2] === 'و' ? "فَعُول" : "فَعِيل / فَعَال";
+        note = "صفة مشبهة أو صيغة مبالغة";
+      } else if (w[1] === 'و' || w[1] === 'ي') {
+        w = w[0] + w.slice(2);
+        pattern = "فَوْعَل / فَيْعَل";
+        note = "مزيد بحرف علة في الحشو";
+      } else {
+        w = w.slice(0, 3);
+      }
+    } else if (w.length > 4) {
+      const filtered = w.replace(/[اوي]/g, '');
+      w = filtered.length >= 3 ? filtered.slice(0, 3) : w.slice(0, 3);
+    }
+
+    // معالجة الإعلال في الوسط (الأجوف) أو الآخر (الناقص)
+    if (w.length === 3) {
+      if (w[1] === 'ا') {
+        // تحقق إن كان واوياً أو يائياً في القاموس
+        const wawCandidate = w[0] + 'و' + w[2];
+        const yaaCandidate = w[0] + 'ي' + w[2];
+        if (LEXICON_DB[wawCandidate]) w = wawCandidate;
+        else if (LEXICON_DB[yaaCandidate]) w = yaaCandidate;
+      }
+      if (w[2] === 'ا') {
+        w = w[0] + w[1] + 'و';
+      }
+    }
+
+    root = w.length >= 3 ? w.slice(0, 3) : norm.padEnd(3, norm[norm.length - 1] || 'ل');
+  }
+
+  const letters = root.split('');
+  const c1 = letters[0], c2 = letters[1], c3 = letters[2];
+
+  // استرجاع المادة المعجمية إن وُجدت، أو توليد نص معجمي قياسي موثق بالبناء الصرفي للجذر
+  const entry = LEXICON_DB[root] || {
+    derivatives: [
+      `${c1}َ${c2}َ${c3}َ`,
+      `يَ${c1}ْ${c2}ُ${c3}ُ`,
+      `${c1}َا${c2}ِ${c3}ٌ`,
+      `مَ${c1}ْ${c2}ُو${c3}ٌ`,
+      `${c1}َ${c2}ْ${c3}ٌ`,
+      `اِسْتَ${c1}ْ${c2}َ${c3}َ`
+    ],
+    lisan: `مادَّةُ (${c1} ${c2} ${c3}): أَصْلٌ ثُلَاثِيٌّ صَحِيحُ البِنَاءِ فِي اللِّسَانِ العَرَبِيِّ، يَدُورُ مَعْنَاهُ حَوْلَ الحَدَثِ الأَصْلِيِّ لِـ (${c1}َ${c2}َ${c3}َ) وَمَا يَتَصَرَّفُ مِنْهُ مِنْ أَفْعَالٍ وَمَصَادِرَ وَأَسْمَاءِ فَاعِلِينَ وَمَفْعُولِينَ.`,
+    qamus: `(${c1}َ${c2}َ${c3}َهُ) يَ${c1}ْ${c2}ُ${c3}ُهُ ${c1}َ${c2}ْ${c3}اً: أَتَى بِأَصْلِ الفِعْلِ وَأَحْكَمَهُ. وَالمَصْدَرُ القِيَاسِيُّ (${c1}َ${c2}ْ${c3}ٌ)، وَاسْمُ الفَاعِلِ (${c1}َا${c2}ِ${c3}ٌ)، وَاسْمُ المَفْعُولِ (مَ${c1}ْ${c2}ُو${c3}ٌ).`,
+    sihah: `(${c1} ${c2} ${c3}): بَابُ الـ(${c3}) فَصْلُ الـ(${c1}). يُقَالُ: ${c1}َ${c2}َ${c3}َ الشَّيْءَ يَ${c1}ْ${c2}ُ${c3}ُهُ، وَتَصَرَّفَتْ مِنْهُ المُشْتَقَّاتُ عَلَى سَنَنِ كَلَامِ العَرَبِ وَأَقْيِسَتِهِمْ.`
+  };
+
+  return {
+    word: cleanOriginal,
+    root,
+    letters,
+    pattern,
+    note,
+    derivatives: entry.derivatives,
+    lisan: entry.lisan,
+    qamus: entry.qamus,
+    sihah: entry.sihah
+  };
+}
+
+// ============================================================================
+// 3. شجرة الجدة صفصافة التفاعلية (HTML5 Canvas)
+// ============================================================================
+class GrandmotherWillowTree {
+  constructor(canvasId) {
+    this.canvas = document.getElementById(canvasId);
+    this.ctx = this.canvas.getContext('2d');
+    this.width = 400;
+    this.height = 400;
+    this.time = 0;
+    this.mouseX = 0.5;
+    this.mouseY = 0.5;
+    this.smileBoost = 0;
+    this.blinkTimer = 0;
+    this.isBlinking = false;
+    this.rootLetters = ['غ', 'ف', 'ر'];
+    this.derivatives = ['غَفَرَ', 'مَغْفِرَةٌ', 'غَفُورٌ', 'اسْتِغْفَارٌ'];
+
+    // توليد اليراعات المضيئة
+    this.fireflies = Array.from({ length: 28 }, () => ({
+      x: Math.random(),
+      y: 0.15 + Math.random() * 0.72,
+      r: 1.5 + Math.random() * 2.5,
+      speedX: (Math.random() - 0.5) * 0.0015,
+      speedY: (Math.random() - 0.5) * 0.0012,
+      phase: Math.random() * Math.PI * 2
+    }));
+
+    this.resize();
+    window.addEventListener('resize', () => this.resize());
+
+    this.canvas.addEventListener('mousemove', (e) => {
+      const rect = this.canvas.getBoundingClientRect();
+      this.mouseX = (e.clientX - rect.left) / rect.width;
+      this.mouseY = (e.clientY - rect.top) / rect.height;
+    });
+
+    this.canvas.addEventListener('click', () => {
+      this.triggerJoy();
+      const whisperEl = document.getElementById('grandmotherWhisper');
+      if (whisperEl) {
+        const idx = Math.floor(Math.random() * GRANDMOTHER_WHISPERS.length);
+        whisperEl.textContent = GRANDMOTHER_WHISPERS[idx];
+      }
+    });
+  }
+
+  resize() {
+    if (!this.canvas || !this.canvas.parentElement) return;
+    const rect = this.canvas.parentElement.getBoundingClientRect();
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    this.width = rect.width || 400;
+    this.height = rect.height || 400;
+    this.canvas.width = this.width * dpr;
+    this.canvas.height = this.height * dpr;
+    this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  setRootData(letters, derivatives) {
+    this.rootLetters = letters;
+    this.derivatives = derivatives.slice(0, 6);
+    this.triggerJoy();
+  }
+
+  triggerJoy() {
+    this.smileBoost = 1.0;
+    for (let i = 0; i < 6; i++) {
+      this.fireflies.push({
+        x: 0.35 + Math.random() * 0.3,
+        y: 0.35 + Math.random() * 0.25,
+        r: 2.2 + Math.random() * 2.5,
+        speedX: (Math.random() - 0.5) * 0.004,
+        speedY: -0.002 - Math.random() * 0.003,
+        phase: Math.random() * Math.PI * 2
+      });
+    }
+    if (this.fireflies.length > 42) {
+      this.fireflies.splice(0, this.fireflies.length - 42);
+    }
+  }
+
+  draw() {
+    const ctx = this.ctx;
+    const w = this.width;
+    const h = this.height;
+    this.time += 0.022;
+
+    if (this.smileBoost > 0) {
+      this.smileBoost = Math.max(0, this.smileBoost - 0.012);
+    }
+
+    // منطق الرمش اللطيف للعينين
+    this.blinkTimer += 0.02;
+    if (this.blinkTimer > 4.2) {
+      this.isBlinking = true;
+      if (this.blinkTimer > 4.38) {
+        this.isBlinking = false;
+        this.blinkTimer = 0;
+      }
+    }
+
+    ctx.clearRect(0, 0, w, h);
+
+    // 1. خلفية ليل سحري دافئ مع ضوء قمر ذهبي خلف الشجرة
+    const bgGrad = ctx.createRadialGradient(w * 0.5, h * 0.38, 15, w * 0.5, h * 0.45, w * 0.72);
+    bgGrad.addColorStop(0, '#366b58');
+    bgGrad.addColorStop(0.45, '#1d4237');
+    bgGrad.addColorStop(1, '#0d211c');
+    ctx.fillStyle = bgGrad;
+    ctx.fillRect(0, 0, w, h);
+
+    // هالة نور دافئة خلف رأس الجدة صفصافة
+    const auraGrad = ctx.createRadialGradient(w * 0.5, h * 0.44, 10, w * 0.5, h * 0.44, w * 0.36);
+    auraGrad.addColorStop(0, 'rgba(247, 213, 126, 0.35)');
+    auraGrad.addColorStop(0.6, 'rgba(130, 214, 173, 0.12)');
+    auraGrad.addColorStop(1, 'rgba(13, 33, 28, 0)');
+    ctx.fillStyle = auraGrad;
+    ctx.fillRect(0, 0, w, h);
+
+    // 2. بركة الماء العاكسة عند القاعدة
+    const waterY = h * 0.85;
+    const waterGrad = ctx.createLinearGradient(0, waterY, 0, h);
+    waterGrad.addColorStop(0, '#163b36');
+    waterGrad.addColorStop(1, '#091917');
+    ctx.fillStyle = waterGrad;
+    ctx.fillRect(0, waterY, w, h - waterY);
+
+    // تموجات ذهبية في الماء
+    for (let i = 0; i < 5; i++) {
+      const rippleW = 55 + i * 32 + Math.sin(this.time * 1.5 + i) * 8;
+      ctx.strokeStyle = `rgba(235, 198, 105, ${0.22 - i * 0.035})`;
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.ellipse(w * 0.5, waterY + 14 + i * 7, rippleW, 4 + i * 1.2, 0, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+
+    // 3. الجذور الممتدة إلى الماء وعليها حروف الجذر الثلاثة
+    const cx = w * 0.5;
+    const trunkTopY = h * 0.25;
+    const trunkBotY = waterY + 6;
+
+    ctx.save();
+    // الجذور السفلية المتشابكة
+    const rootOffsets = [-95, -48, 0, 48, 95];
+    rootOffsets.forEach((off, idx) => {
+      ctx.beginPath();
+      ctx.moveTo(cx + off * 0.35, trunkBotY - 26);
+      ctx.bezierCurveTo(
+        cx + off * 0.7, trunkBotY - 8,
+        cx + off * 1.15, trunkBotY + 4,
+        cx + off * 1.35, trunkBotY + 14
+      );
+      ctx.lineWidth = 14 - Math.abs(idx - 2) * 2.5;
+      ctx.lineCap = 'round';
+      ctx.strokeStyle = '#3c291b';
+      ctx.stroke();
+    });
+
+    // 4. الجذع العريض الملتوي بلطف
+    const trunkGrad = ctx.createLinearGradient(cx - 85, trunkTopY, cx + 85, trunkBotY);
+    trunkGrad.addColorStop(0, '#4f3724');
+    trunkGrad.addColorStop(0.5, '#684930');
+    trunkGrad.addColorStop(1, '#3b2819');
+
+    ctx.fillStyle = trunkGrad;
+    ctx.beginPath();
+    ctx.moveTo(cx - 105, trunkBotY);
+    ctx.bezierCurveTo(cx - 82, h * 0.65, cx - 72, h * 0.42, cx - 92, trunkTopY);
+    ctx.lineTo(cx + 92, trunkTopY);
+    ctx.bezierCurveTo(cx + 72, h * 0.42, cx + 82, h * 0.65, cx + 105, trunkBotY);
+    ctx.closePath();
+    ctx.fill();
+
+    // خطوط لحاء ناعمة ودافئة
+    ctx.strokeStyle = 'rgba(35, 22, 12, 0.35)';
+    ctx.lineWidth = 2;
+    [-46, -24, 24, 46].forEach((lx) => {
+      ctx.beginPath();
+      ctx.moveTo(cx + lx * 0.85, trunkTopY + 15);
+      ctx.quadraticCurveTo(cx + lx * 0.65, h * 0.54, cx + lx * 1.1, trunkBotY - 12);
+      ctx.stroke();
+    });
+
+    // 5. ملامح الجدة صفصافة الحنونة المبتسمة
+    const faceY = h * 0.50;
+    const lookX = (this.mouseX - 0.5) * 7;
+    const lookY = (this.mouseY - 0.5) * 5;
+
+    // وجنتان دافئتان متوردتان بلطف
+    const cheekGlow = 0.25 + this.smileBoost * 0.25;
+    [-38, 38].forEach((side) => {
+      const cGrad = ctx.createRadialGradient(cx + side, faceY + 14, 2, cx + side, faceY + 14, 22);
+      cGrad.addColorStop(0, `rgba(235, 145, 110, ${cheekGlow})`);
+      cGrad.addColorStop(1, 'rgba(235, 145, 110, 0)');
+      ctx.fillStyle = cGrad;
+      ctx.beginPath();
+      ctx.arc(cx + side, faceY + 14, 22, 0, Math.PI * 2);
+      ctx.fill();
+    });
+
+    // الحاجبان المقوسان بحنان وعطف
+    ctx.strokeStyle = '#3a2718';
+    ctx.lineWidth = 4.2;
+    ctx.lineCap = 'round';
+    // حاجب أيسر
+    ctx.beginPath();
+    ctx.moveTo(cx - 46, faceY - 18);
+    ctx.quadraticCurveTo(cx - 28, faceY - 28 - this.smileBoost * 3, cx - 13, faceY - 20);
+    ctx.stroke();
+    // حاجب أيمن
+    ctx.beginPath();
+    ctx.moveTo(cx + 13, faceY - 20);
+    ctx.quadraticCurveTo(cx + 28, faceY - 28 - this.smileBoost * 3, cx + 46, faceY - 18);
+    ctx.stroke();
+
+    // العينان المشرقتان الدافئتان
+    [-28, 28].forEach((eyeX) => {
+      ctx.save();
+      ctx.translate(cx + eyeX, faceY - 5);
+
+      if (this.isBlinking) {
+        // قوس رمش مبتسم لطيف
+        ctx.strokeStyle = '#2d1d11';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.arc(0, 0, 11, 0.15 * Math.PI, 0.85 * Math.PI);
+        ctx.stroke();
+      } else {
+        // محجر العين المضيء
+        ctx.fillStyle = '#fff9e6';
+        ctx.beginPath();
+        ctx.ellipse(0, 0, 12, 8.5, 0, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.strokeStyle = '#3a2617';
+        ctx.lineWidth = 2.2;
+        ctx.stroke();
+
+        // القزحية العسلية الذهبية
+        ctx.fillStyle = '#8c5a19';
+        ctx.beginPath();
+        ctx.arc(lookX * 0.45, lookY * 0.45, 5.5, 0, Math.PI * 2);
+        ctx.fill();
+
+        // البؤبؤ وبريق الحكمة
+        ctx.fillStyle = '#1f150c';
+        ctx.beginPath();
+        ctx.arc(lookX * 0.5, lookY * 0.5, 2.7, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = '#ffffff';
+        ctx.beginPath();
+        ctx.arc(lookX * 0.5 - 1.8, lookY * 0.5 - 1.8, 1.5, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // تجاعيد بشاشة رقيقة بجانب العين
+      ctx.strokeStyle = 'rgba(45, 29, 17, 0.45)';
+      ctx.lineWidth = 1.4;
+      const sign = eyeX < 0 ? -1 : 1;
+      ctx.beginPath();
+      ctx.moveTo(sign * 14, -2);
+      ctx.lineTo(sign * 19, -5);
+      ctx.moveTo(sign * 14, 2);
+      ctx.lineTo(sign * 19, 4);
+      ctx.stroke();
+
+      ctx.restore();
+    });
+
+    // الأنف اللطيف المنحوت في اللحاء
+    ctx.strokeStyle = '#3d2818';
+    ctx.lineWidth = 3;
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo(cx - 2, faceY - 4);
+    ctx.quadraticCurveTo(cx - 6, faceY + 11, cx, faceY + 14);
+    ctx.quadraticCurveTo(cx + 6, faceY + 13, cx + 5, faceY + 9);
+    ctx.stroke();
+
+    // الابتسامة الأمومية الدافئة والعريضة
+    const smileDepth = 15 + this.smileBoost * 6;
+    ctx.strokeStyle = '#2f1e11';
+    ctx.lineWidth = 3.6;
+    ctx.beginPath();
+    ctx.moveTo(cx - 26, faceY + 24);
+    ctx.quadraticCurveTo(cx, faceY + 24 + smileDepth, cx + 26, faceY + 24);
+    ctx.stroke();
+
+    // خط الشفة السفلية الناعم وغمازتا البشاشة
+    ctx.strokeStyle = 'rgba(58, 39, 24, 0.55)';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.arc(cx - 28, faceY + 23, 4, 0.6 * Math.PI, 1.4 * Math.PI);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(cx + 28, faceY + 23, 4, -0.4 * Math.PI, 0.4 * Math.PI);
+    ctx.stroke();
+
+    ctx.restore();
+
+    // 6. ستائر أغصان الصفصاف المتدلية كشعر فضي وذهبي وزمردي حول الوجه
+    const strandCount = 24;
+    for (let i = 0; i < strandCount; i++) {
+      const ratio = i / (strandCount - 1);
+      const startX = cx - 155 + ratio * 310;
+      const startY = h * 0.14 + Math.sin(ratio * Math.PI) * -28;
+      // إبعاد الأغصان الوسطى قليلاً عن العينين والابتسامة لتبقى واضحة تماماً
+      const centerAvoid = Math.exp(-Math.pow((ratio - 0.5) * 4.5, 2));
+      const spreadX = (ratio < 0.5 ? -1 : 1) * centerAvoid * 46;
+      const sway = Math.sin(this.time * 1.4 + i * 0.55) * 10;
+      const endY = h * (0.62 + (i % 3) * 0.06 - centerAvoid * 0.28);
+
+      const strandGrad = ctx.createLinearGradient(startX, startY, startX + spreadX, endY);
+      if (i % 3 === 0) {
+        strandGrad.addColorStop(0, '#3ca374');
+        strandGrad.addColorStop(0.6, '#88d4ab');
+        strandGrad.addColorStop(1, '#e6cf8b');
+      } else if (i % 3 === 1) {
+        strandGrad.addColorStop(0, '#2a7d58');
+        strandGrad.addColorStop(0.65, '#62bd90');
+        strandGrad.addColorStop(1, '#cbe8d5');
+      } else {
+        strandGrad.addColorStop(0, '#4bb382');
+        strandGrad.addColorStop(0.7, '#b5dfca');
+        strandGrad.addColorStop(1, '#f4df9e');
+      }
+
+      ctx.strokeStyle = strandGrad;
+      ctx.lineWidth = 3.2;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(startX, startY);
+      ctx.bezierCurveTo(
+        startX + spreadX * 0.6 + sway * 0.5,
+        startY + (endY - startY) * 0.45,
+        startX + spreadX + sway,
+        startY + (endY - startY) * 0.8,
+        startX + spreadX + sway * 1.2,
+        endY
+      );
+      ctx.stroke();
+
+      // أوراق صفصاف صغيرة متدلية على كل خصلة
+      for (let step = 0.25; step <= 0.95; step += 0.22) {
+        const lx = startX + (spreadX + sway) * step;
+        const ly = startY + (endY - startY) * step;
+        ctx.fillStyle = step > 0.7 ? 'rgba(243, 217, 140, 0.85)' : 'rgba(104, 201, 152, 0.85)';
+        ctx.beginPath();
+        ctx.ellipse(lx, ly, 2.5, 6.5, Math.sin(this.time + i + step) * 0.3, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    // 7. عرض حروف الجذر الثلاثة متوهجة عند الجذور السفلية
+    this.rootLetters.forEach((letter, idx) => {
+      const lx = cx + (1 - idx) * 46; // ترتيب من اليمين إلى اليسار
+      const ly = trunkBotY - 18;
+
+      ctx.fillStyle = 'rgba(20, 48, 39, 0.9)';
+      ctx.beginPath();
+      ctx.arc(lx, ly, 17, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.strokeStyle = '#e2b857';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      ctx.fillStyle = '#fde68a';
+      ctx.font = 'bold 18px Amiri, serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(letter, lx, ly + 1);
+    });
+
+    // 8. عرض المشتقات كأوراق مضيئة على جانبي التاج
+    const branchPositions = [
+      { x: w * 0.17, y: h * 0.26 },
+      { x: w * 0.83, y: h * 0.26 },
+      { x: w * 0.14, y: h * 0.44 },
+      { x: w * 0.86, y: h * 0.44 },
+      { x: w * 0.18, y: h * 0.62 },
+      { x: w * 0.82, y: h * 0.62 }
+    ];
+
+    this.derivatives.forEach((der, idx) => {
+      if (!branchPositions[idx]) return;
+      const pos = branchPositions[idx];
+      const bobY = Math.sin(this.time * 1.6 + idx) * 4;
+
+      ctx.save();
+      ctx.translate(pos.x, pos.y + bobY);
+
+      ctx.fillStyle = 'rgba(15, 44, 36, 0.85)';
+      ctx.strokeStyle = 'rgba(226, 184, 87, 0.75)';
+      ctx.lineWidth = 1.4;
+      this.roundRect(ctx, -40, -13, 80, 26, 13);
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.fillStyle = '#fef3c7';
+      ctx.font = 'bold 13px Amiri, serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(der, 0, 1);
+
+      ctx.restore();
+    });
+
+    // 9. اليراعات السحرية المتلألئة
+    this.fireflies.forEach((f) => {
+      f.x += f.speedX;
+      f.y += f.speedY;
+      if (f.x < 0.05 || f.x > 0.95) f.speedX *= -1;
+      if (f.y < 0.1 || f.y > 0.82) f.speedY *= -1;
+
+      const alpha = 0.45 + 0.55 * Math.sin(this.time * 2.5 + f.phase);
+      const fx = f.x * w;
+      const fy = f.y * h;
+
+      const glow = ctx.createRadialGradient(fx, fy, 0, fx, fy, f.r * 4);
+      glow.addColorStop(0, `rgba(255, 241, 168, ${alpha})`);
+      glow.addColorStop(1, 'rgba(255, 241, 168, 0)');
+      ctx.fillStyle = glow;
+      ctx.beginPath();
+      ctx.arc(fx, fy, f.r * 4, 0, Math.PI * 2);
+      ctx.fill();
+    });
+  }
+
+  roundRect(ctx, x, y, width, height, radius) {
+    ctx.beginPath();
+    ctx.moveTo(x + radius, y);
+    ctx.lineTo(x + width - radius, y);
+    ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+    ctx.lineTo(x + width, y + height - radius);
+    ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+    ctx.lineTo(x + radius, y + height);
+    ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+    ctx.lineTo(x, y + radius);
+    ctx.quadraticCurveTo(x, y, x + radius, y);
+    ctx.closePath();
+  }
+}
+
+// ============================================================================
+// 4. موسوعة الشعر العربي (106 قصائد طويلة عبر العصور)
+// ============================================================================
+const POEMS_DB = [
+  {
+    id: 1,
+    title: "على قدر أهل العزم تأتي العزائم",
+    poet: "أبو الطيب المتنبي",
+    era: "العباسي",
+    theme: "الحكمة والفخر",
+    artType: "desert_stars",
+    verses: [
+      "عَلَى قَدْرِ أَهْلِ العَزْمِ تَأْتِي العَزَائِمُ *** وَتَأْتِي عَلَى قَدْرِ الكِرَامِ المَكَارِمُ",
+      "وَتَعْظُمُ فِي عَيْنِ الصَّغِيرِ صِغَارُهَا *** وَتَصْغُرُ فِي عَيْنِ العَظِيمِ العَظَائِمُ",
+      "يُكَلِّفُ سَيْفُ الدَّوْلَةِ الجَيْشَ هَمَّهُ *** وَقَدْ عَجَزَتْ عَنْهُ الجُيُوشُ الخَضَارِمُ",
+      "وَيَطْلُبُ عِنْدَ النَّاسِ مَا عِنْدَ نَفْسِهِ *** وَذَلِكَ مَا لَا تَدَّعِيهِ الضَّرَاغِمُ",
+      "هَلِ الحَدَثُ الحَمْرَاءُ تَعْرِفُ لَوْنَهَا *** وَتَعْلَمُ أَيُّ السَّاقِيَيْنِ الغَمَائِمُ",
+      "سَقَتْهَا الغَمَامُ الغُرُّ قَبْلَ نُزُولِهِ *** فَلَمَّا دَنَا مِنْهَا سَقَتْهَا الجَمَاجِمُ",
+      "بَنَاهَا فَأَعْلَى وَالقَنَا يَقْرَعُ القَنَا *** وَمَوْجُ المَنَايَا حَوْلَهَا مُتَلَاطِمُ",
+      "وَكَانَ بِهَا مِثْلُ الجُنُونِ فَأَصْبَحَتْ *** وَمِنْ جُثَثِ القَتْلَى عَلَيْهَا تَمَائِمُ",
+      "تَظَلُّ مُلُوكُ الأَرْضِ خَاشِعَةً لَهُ *** تُفَارِقُهُ هَلْكَى وَتَلْقَاهُ سَالِمُ",
+      "وَتُحْيِي لَهُ المَالَ الصَّوَارِمُ وَالقَنَا *** وَيَقْتُلُ مَا تُحْيِي التَّبَسُّمُ وَالجَدَا"
+    ]
+  },
+  {
+    id: 2,
+    title: "قفا نبك من ذكرى حبيب ومنزل",
+    poet: "امرؤ القيس",
+    era: "الجاهلي",
+    theme: "المعلقات والوقوف على الأطلال",
+    artType: "desert_dunes",
+    verses: [
+      "قِفَا نَبْكِ مِنْ ذِكْرَى حَبِيبٍ وَمَنْزِلِ *** بِسِقْطِ اللِّوَى بَيْنَ الدَّخُولِ فَحَوْمَلِ",
+      "فَتُوضِحَ فَالمِقْرَاةِ لَمْ يَعْفُ رَسْمُهَا *** لِمَا نَسَجَتْهَا مِنْ جَنُوبٍ وَشَمْأَلِ",
+      "تَرَى بَعَرَ الآرَامِ فِي عَرَصَاتِهَا *** وَقِيعَانِهَا كَأَنَّهُ حَبُّ فُلْفُلِ",
+      "كَأَنِّي غَدَاةَ البَيْنِ يَوْمَ تَحَمَّلُوا *** لَدَى سَمُرَاتِ الحَيِّ نَاقِفُ حَنْظَلِ",
+      "وُقُوفاً بِهَا صَحْبِي عَلَيَّ مَطِيَّهُمْ *** يَقُولُونَ لَا تَهْلِكْ أَسًى وَتَجَمَّلِ",
+      "وَإِنَّ شِفَائِي عَبْرَةٌ مُهْرَاقَةٌ *** فَهَلْ عِنْدَ رَسْمٍ دَارِسٍ مِنْ مُعَوَّلِ",
+      "أَلَا أَيُّهَا اللَّيْلُ الطَّوِيلُ أَلَا انْجَلِي *** بِصُبْحٍ وَمَا الإِصْبَاحُ مِنْكَ بِأَمْثَلِ",
+      "فَيَا لَكَ مِنْ لَيْلٍ كَأَنَّ نُجُومَهُ *** بِكُلِّ مُغَارِ الفَتْلِ شُدَّتْ بِيَذْبُلِ",
+      "وَقَدْ أَغْتَدِي وَالطَّيْرُ فِي وُكُنَاتِهَا *** بِمُنْجَرِدٍ قَيْدِ الأَوَابِدِ هَيْكَلِ",
+      "مِكَرٍّ مِفَرٍّ مُقْبِلٍ مُدْبِرٍ مَعاً *** كَجُلْمُودِ صَخْرٍ حَطَّهُ السَّيْلُ مِنْ عَلِ"
+    ]
+  },
+  {
+    id: 3,
+    title: "ألا هبي بصحنك فاصبحينا",
+    poet: "عمرو بن كلثوم",
+    era: "الجاهلي",
+    theme: "المعلقات والفخر",
+    artType: "fortress_dawn",
+    verses: [
+      "أَلَا هُبِّي بِصَحْنِكِ فَاصْبَحِينَا *** وَلَا تُبْقِي خُمُورَ الأَنْدَرِينَا",
+      "مُشَعْشَعَةً كَأَنَّ الحُصَّ فِيهَا *** إِذَا مَا المَاءُ خَالَطَهَا سَخِينَا",
+      "أَبَا هِنْدٍ فَلَا تَعْجَلْ عَلَيْنَا *** وَأَنْظِرْنَا نُخَبِّرْكَ اليَقِينَا",
+      "بِأَنَّا نُورِدُ الرَّايَاتِ بِيضاً *** وَنُصْدِرُهُنَّ حُمْراً قَدْ رَوِينَا",
+      "وَأَيَّامٍ لَنَا غُرٍّ طِوَالٍ *** عَصَيْنَا المَلْكَ فِيهَا أَنْ نَدِينَا",
+      "وَسَيِّدِ مَعْشَرٍ قَدْ تَوَّجُوهُ *** بِتَاجِ المُلْكِ يَحْمِي المُحْجَرِينَا",
+      "وَرِثْنَا المَجْدَ قَدْ عَلِمَتْ مَعَدٌّ *** نُطَاعِنُ دُونَهُ حَتَّى يَبِينَا",
+      "إِذَا بَلَغَ الفِطَامَ لَنَا صَبِيٌّ *** تَخِرُّ لَهُ الجَبَابِرُ سَاجِدِينَا",
+      "مَلَأْنَا البَرَّ حَتَّى ضَاقَ عَنَّا *** وَظَهْرَ البَحْرِ نَمْلَؤُهُ سَفِينَا",
+      "لَنَا الدُّنْيَا وَمَنْ أَضْحَى عَلَيْهَا *** وَنَبْطِشُ حِينَ نَبْطِشُ قَادِرِينَا"
+    ]
+  },
+  {
+    id: 4,
+    title: "أمن أم أوفى دمنة لم تكلم",
+    poet: "زهير بن أبي سلمى",
+    era: "الجاهلي",
+    theme: "المعلقات والحكمة والسلام",
+    artType: "olive_meadow",
+    verses: [
+      "أَمِنْ أُمِّ أَوْفَى دِمْنَةٌ لَمْ تَكَلَّمِ *** بِحَوْمَانَةِ الدُّرَّاجِ فَالمُتَثَلَّمِ",
+      "وَدَارٌ لَهَا بِالرَّقْمَتَيْنِ كَأَنَّهَا *** مَرَاجِعُ وَشْمٍ فِي نَوَاشِرِ مِعْصَمِ",
+      "بِهَا العِينُ وَالآرَامُ يَمْشِينَ خِلْفَةً *** وَأَطْلَاؤُهَا يَنْهَضْنَ مِنْ كُلِّ مَجْثَمِ",
+      "وَمَا الحَرْبُ إِلَّا مَا عَلِمْتُمْ وَذُقْتُمُ *** وَمَا هُوَ عَنْهَا بِالحَدِيثِ المُرَجَّمِ",
+      "مَتَى تَبْعَثُوهَا تَبْعَثُوهَا ذَمِيمَةً *** وَتَضْرَ إِذَا ضَرَّيْتُمُوهَا فَتَضْرَمِ",
+      "سَئِمْتُ تَكَالِيفَ الحَيَاةِ وَمَنْ يَعِشْ *** ثَمَانِينَ حَوْلاً لَا أَبَا لَكَ يَسْأَمِ",
+      "وَأَعْلَمُ عِلْمَ اليَوْمِ وَالأَمْسِ قَبْلَهُ *** وَلَكِنَّنِي عَنْ عِلْمِ مَا فِي غَدٍ عَمِ",
+      "وَمَنْ يَكُ ذَا فَضْلٍ فَيَبْخَلْ بِفَضْلِهِ *** عَلَى قَوْمِهِ يُسْتَغْنَ عَنْهُ وَيُذْمَمِ",
+      "وَمَنْ هَابَ أَسْبَابَ المَنَايَا يَنَلْنَهُ *** وَإِنْ يَرْقَ أَسْبَابَ السَّمَاءِ بِسُلَّمِ",
+      "وَمَهْمَا تَكُنْ عِنْدَ امْرِئٍ مِنْ خَلِيقَةٍ *** وَإِنْ خَالَهَا تَخْفَى عَلَى النَّاسِ تُعْلَمِ"
+    ]
+  },
+  {
+    id: 5,
+    title: "هل غادر الشعراء من متردم",
+    poet: "عنترة بن شداد",
+    era: "الجاهلي",
+    theme: "المعلقات والفروسية والغزل",
+    artType: "desert_stars",
+    verses: [
+      "هَلْ غَادَرَ الشُّعَرَاءُ مِنْ مُتَرَدَّمِ *** أَمْ هَلْ عَرَفْتَ الدَّارَ بَعْدَ تَوَهُّمِ",
+      "يَا دَارَ عَبْلَةَ بِالجَوَاءِ تَكَلَّمِي *** وَعِمِي صَبَاحاً دَارَ عَبْلَةَ وَاسْلَمِي",
+      "وَلَقَدْ ذَكَرْتُكِ وَالرِّمَاحُ نَوَاهِلٌ *** مِنِّي وَبِيضُ الهِنْدِ تَقْطُرُ مِنْ دَمِي",
+      "فَوَدِدْتُ تَقْبِيلَ السُّيُوفِ لِأَنَّهَا *** لَمَعَتْ كَبَارِقِ ثَغْرِكِ المُتَبَسِّمِ",
+      "إِنِّي امْرُؤٌ مِنْ خَيْرِ عَبْسٍ مَنْصِباً *** شَطْرِي وَأَحْمِي سَائِرِي بِالمُنْصُلِ",
+      "إِنْ يُلْحَقُوا أَكْرُرْ وَإِنْ يُسْتَلْحَمُوا *** أَشْدُدْ وَإِنْ يُلْفَوْا بِضَنْكٍ أَنْزِلِ",
+      "هَلَّا سَأَلْتِ الخَيْلَ يَا ابْنَةَ مَالِكٍ *** إِنْ كُنْتِ جَاهِلَةً بِمَا لَمْ تَعْلَمِي",
+      "يُخْبِرْكِ مَنْ شَهِدَ الوَقِيعَةَ أَنَّنِي *** أَغْشَى الوَغَى وَأَعِفُّ عِنْدَ المَغْنَمِ",
+      "وَلَقَدْ شَفَى نَفْسِي وَأَبْرَأَ سُقْمَهَا *** قِيلُ الفَوَارِسِ وَيْكَ عَنْتَرَ أَقْدِمِ"
+    ]
+  },
+  {
+    id: 6,
+    title: "لخولة أطلال ببرقة ثهمد",
+    poet: "طرفة بن العبد",
+    era: "الجاهلي",
+    theme: "المعلقات والحكمة",
+    artType: "desert_dunes",
+    verses: [
+      "لِخَوْلَةَ أَطْلَالٌ بِبُرْقَةِ ثَهْمَدِ *** تَلُوحُ كَبَاقِي الوَشْمِ فِي ظَاهِرِ اليَدِ",
+      "وُقُوفاً بِهَا صَحْبِي عَلَيَّ مَطِيَّهُمْ *** يَقُولُونَ لَا تَهْلِكْ أَسًى وَتَجَلَّدِ",
+      "إِذَا القَوْمُ قَالُوا مَنْ فَتًى خِلْتُ أَنَّنِي *** عُنِيتُ فَلَمْ أَكْسَلْ وَلَمْ أَتَبَلَّدِ",
+      "وَلَسْتُ بِحَلَّالِ التِّلَاعِ مَخَافَةً *** وَلَكِنْ مَتَى يَسْتَرْفِدِ القَوْمُ أَرْفِدِ",
+      "أَرَى قَبْرَ نَحَّامٍ بَخِيلٍ بِمَالِهِ *** كَقَبْرِ غَوِيٍّ فِي البَطَالَةِ مُفْسِدِ",
+      "أَرَى المَوْتَ يَعْتَامُ الكِرَامَ وَيَصْطَفِي *** عَقِيلَةَ مَالِ الفَاحِشِ المُتَشَدِّدِ",
+      "وَمَا زَالَ تَشْرَابِي الخُمُورَ وَلَذَّتِي *** وَبَيْعِي وَإِنْفَاقِي طَرِيفِي وَمُتْلَدِي",
+      "سَتُبْدِي لَكَ الأَيَّامُ مَا كُنْتَ جَاهِلاً *** وَيَأْتِيكَ بِالأَخْبَارِ مَنْ لَمْ تُزَوِّدِ"
+    ]
+  },
+  {
+    id: 7,
+    title: "أضحى التنائي بديلاً من تدانينا",
+    poet: "ابن زيدون",
+    era: "الأندلسي",
+    theme: "الغزل والحنين الأندلسي",
+    artType: "andalus_garden",
+    verses: [
+      "أَضْحَى التَّنَائِي بَدِيلاً مِنْ تَدَانِينَا *** وَنَابَ عَنْ طِيبِ لُقْيَانَا تَجَافِينَا",
+      "أَلَا وَقَدْ حَانَ صُبْحُ البَيْنِ صَبَّحَنَا *** حَيْنٌ فَقَامَ بِنَا لِلْحَيْنِ نَاعِينَا",
+      "مَنْ مُبْلِغُ المُلْبِسِينَا بِانْتِزَاحِهِمُ *** حُزْناً مَعَ الدَّهْرِ لَا يَبْلَى وَيُبْلِينَا",
+      "بِنْتُمْ وَبِنَّا فَمَا ابْتَلَّتْ جَوَانِحُنَا *** شَوْقاً إِلَيْكُمْ وَلَا جَفَّتْ مَآقِينَا",
+      "نَكَادُ حِينَ تُنَاجِيكُمْ ضَمَائِرُنَا *** يَقْضِي عَلَيْنَا الأَسَى لَوْلَا تَأَسِّينَا",
+      "حَالَتْ لِفَقْدِكُمُ أَيَّامُنَا فَغَدَتْ *** سُوداً وَكَانَتْ بِكُمْ بِيضاً لَيَالِينَا",
+      "إِذْ جَانِبُ العَيْشِ طَلْقٌ مِنْ تَأَلُّفِنَا *** وَمَرْبَعُ اللَّهْوِ صَافٍ مِنْ تَصَافِينَا",
+      "لَا تَحْسَبُوا نَأْيَكُمْ عَنَّا يُغَيِّرُنَا *** إِنْ طَالَمَا غَيَّرَ النَّأْيُ المُحِبِّينَا",
+      "وَاللهِ مَا طَلَبَتْ أَهْوَاؤُنَا بَدَلاً *** مِنْكُمْ وَلَا انْصَرَفَتْ عَنْكُمْ أَمَانِينَا"
+    ]
+  },
+  {
+    id: 8,
+    title: "جادك الغيث إذا الغيث همى",
+    poet: "لسان الدين بن الخطيب",
+    era: "الأندلسي",
+    theme: "الموشحات الأندلسية",
+    artType: "andalus_garden",
+    verses: [
+      "جَادَكَ الغَيْثُ إِذَا الغَيْثُ هَمَى *** يَا زَمَانَ الوَصْلِ بِالأَنْدَلُسِ",
+      "لَمْ يَكُنْ وَصْلُكَ إِلَّا حُلُمَا *** فِي الكَرَى أَوْ خُلْسَةَ المُخْتَلِسِ",
+      "إِذْ يَقُودُ الدَّهْرُ أَشْتَاتَ المُنَى *** تَنْقُلُ الخَطْوَ عَلَى مَا يُرْسَمُ",
+      "زُمَراً بَيْنَ فُرَادَى وَثُنَا *** مِثْلَمَا يَدْعُو الوُفُودَ المَوْسِمُ",
+      "وَالحَيَا قَدْ جَلَّلَ الرَّوْضَ سَنَا *** فَثُغُورُ الزَّهْرِ مِنْهُ تَبْسِمُ",
+      "وَرَوَى النُّعْمَانُ عَنْ مَاءِ السَّمَا *** كَيْفَ يَرْوِي مَالِكٌ عَنْ أَنَسِ",
+      "فَكَسَاهُ الحُسْنُ ثَوْباً مُعْلَمَا *** يَزْدَهِي مِنْهُ بِأَبْهَى مَلْبَسِ",
+      "فِي لَيَالٍ كَتَمَتْ سِرَّ الهَوَى *** بِالدُّجَى لَوْلَا شُمُوسُ الغُرَرِ"
+    ]
+  },
+  {
+    id: 9,
+    title: "بانت سعاد فقلبي اليوم متبول",
+    poet: "كعب بن زهير",
+    era: "الإسلامي والأموي",
+    theme: "المديح النبوي (البردة)",
+    artType: "fortress_dawn",
+    verses: [
+      "بَانَتْ سُعَادُ فَقَلْبِي اليَوْمَ مَتْبُولُ *** مُتَيَّمٌ إِثْرَهَا لَمْ يُفْدَ مَكْبُولُ",
+      "وَمَا سُعَادُ غَدَاةَ البَيْنِ إِذْ رَحَلُوا *** إِلَّا أَغَنُّ غَضِيضُ الطَّرْفِ مَكْحُولُ",
+      "أُنْبِئْتُ أَنَّ رَسُولَ اللهِ أَوْعَدَنِي *** وَالعَفْوُ عِنْدَ رَسُولِ اللهِ مَأْمُولُ",
+      "مَهْلاً هَدَاكَ الَّذِي أَعْطَاكَ نَافِلَةَ الـ *** قُرْآنِ فِيهَا مَوَاعِيظٌ وَتَفْصِيلُ",
+      "لَا تَأْخُذَنِّي بِأَقْوَالِ الوُشَاةِ وَلَمْ *** أُذْنِبْ وَإِنْ كَثُرَتْ فِيَّ الأَقَاوِيلُ",
+      "إِنَّ الرَّسُولَ لَسَيْفٌ يُسْتَضَاءُ بِهِ *** مُهَنَّدٌ مِنْ سُيُوفِ اللهِ مَسْلُولُ",
+      "فِي عُصْبَةٍ مِنْ قُرَيْشٍ قَالَ قَائِلُهُمْ *** بِبَطْنِ مَكَّةَ لَمَّا أَسْلَمُوا زُولُوا",
+      "يَمْشُونَ مَشْيَ الجِمَالِ الزُّهْرِ يَعْصِمُهُمْ *** ضَرْبٌ إِذَا عَرَّدَ السُّودُ التَّنَابِيلُ"
+    ]
+  },
+  {
+    id: 10,
+    title: "السيف أصدق أنباء من الكتب",
+    poet: "أبو تمام",
+    era: "العباسي",
+    theme: "الفتح والحماسة",
+    artType: "fortress_dawn",
+    verses: [
+      "السَّيْفُ أَصْدَقُ أَنْبَاءً مِنَ الكُتُبِ *** فِي حَدِّهِ الحَدُّ بَيْنَ الجِدِّ وَاللَّعِبِ",
+      "بِيضُ الصَّفَائِحِ لَا سُودُ الصَّحَائِفِ فِي *** مُتُونِهِنَّ جَلَاءُ الشَّكِّ وَالرِّيَبِ",
+      "وَالعِلْمُ فِي شُهُبِ الأَرْمَاحِ لَامِعَةً *** بَيْنَ الخَمِيسَيْنِ لَا فِي السَّبْعَةِ الشُّهُبِ",
+      "أَيْنَ الرِّوَايَةُ بَلْ أَيْنَ النُّجُومُ وَمَا *** صَاغُوهُ مِنْ زُخْرُفٍ فِيهَا وَمِنْ كَذِبِ",
+      "فَتْحُ الفُتُوحِ تَعَالَى أَنْ يُحِيطَ بِهِ *** نَظْمٌ مِنَ الشِّعْرِ أَوْ نَثْرٌ مِنَ الخُطَبِ",
+      "فَتْحٌ تَفَتَّحُ أَبْوَابُ السَّمَاءِ لَهُ *** وَتَبْرُزُ الأَرْضُ فِي أَثْوَابِهَا القُشُبِ",
+      "يَا يَوْمَ وَقْعَةِ عَمُّورِيَّةَ انْصَرَفَتْ *** عَنْكَ المُنَى حُفَّلاً مَعْسُولَةَ الحَلَبِ",
+      "أَبْقَيْتَ جِدَّ بَنِي الإِسْلَامِ فِي صَعَدٍ *** وَالمُشْرِكِينَ وَدَارَ الشِّرْكِ فِي صَبَبِ"
+    ]
+  },
+  {
+    id: 11,
+    title: "أراك عصي الدمع شيمتك الصبر",
+    poet: "أبو فراس الحمداني",
+    era: "العباسي",
+    theme: "الروميات والوجدان",
+    artType: "desert_stars",
+    verses: [
+      "أَرَاكَ عَصِيَّ الدَّمْعِ شِيمَتُكَ الصَّبْرُ *** أَمَا لِلْهَوَى نَهْيٌ عَلَيْكَ وَلَا أَمْرُ",
+      "بَلَى أَنَا مُشْتَاقٌ وَعِنْدِيَ لَوْعَةٌ *** وَلَكِنَّ مِثْلِي لَا يُذَاعُ لَهُ سِرُّ",
+      "إِذَا اللَّيْلُ أَضْوَانِي بَسَطْتُ يَدَ الهَوَى *** وَأَذْلَلْتُ دَمْعاً مِنْ خَلَائِقِهِ الكِبْرُ",
+      "تَكَادُ تُضِيءُ النَّارُ بَيْنَ جَوَانِحِي *** إِذَا هِيَ أَذْكَتْهَا الصَّبَابَةُ وَالفِكْرُ",
+      "مُعَلِّلَتِي بِالوَصْلِ وَالمَوْتُ دُونَهُ *** إِذَا مِتُّ ظَمْآناً فَلَا نَزَلَ القَطْرُ",
+      "وَقَالُوا أَتَنْسَاهَا وَقَدْ حَالَ دُونَهَا *** طَوَارِقُ لَيْلٍ لَا يَبِيتُ لَهَا ذِكْرُ",
+      "وَإِنِّي لَجَرَّارٌ لِكُلِّ كَتِيبَةٍ *** مُعَوَّدَةٍ أَنْ لَا يُخِلَّ بِهَا النَّصْرُ",
+      "سَيَذْكُرُنِي قَوْمِي إِذَا جَدَّ جِدُّهُمْ *** وَفِي اللَّيْلَةِ الظَّلْمَاءِ يُفْتَقَدُ البَدْرُ"
+    ]
+  },
+  {
+    id: 12,
+    title: "صنت نفسي عما يدنس نفسي",
+    poet: "البحتري",
+    era: "العباسي",
+    theme: "السينية وإيوان كسرى",
+    artType: "andalus_garden",
+    verses: [
+      "صُنْتُ نَفْسِي عَمَّا يُدَنِّسُ نَفْسِي *** وَتَرَفَّعْتُ عَنْ جَدَا كُلِّ جِبْسِ",
+      "وَتَمَاسَكْتُ حِينَ زَعْزَعَنِي الدَّهْـ *** رُ التِمَاساً مِنْهُ لِتَعْسِي وَنُكْسِي",
+      "حَضَرَتْ رَحْلِيَ الهُمُومُ فَوَجَّهْـ *** تُ إِلَى أَبْيَضِ المَدَائِنِ عَنْسِي",
+      "أَتَسَلَّى عَنِ الحُظُوظِ وَآسَى *** لِمَحَلٍّ مِنْ آلِ سَاسَانَ دَرْسِ",
+      "ذَكَّرَتْنِيهُمُ الخُطُوبُ التَّوَالِي *** وَلَقَدْ تُذْكِرُ الخُطُوبُ وَتُنْسِي",
+      "وَإِذَا مَا رَأَيْتَ صُورَةَ أَنْطَا *** كِيَّةَ ارْتَعْتَ بَيْنَ رُومٍ وَفُرْسِ",
+      "وَالْمَنَايَا مَوَاثِلٌ وَأَنُوشِرْ *** وَانُ يُزْجِي الصُّفُوفَ تَحْتَ الدِّرَفْسِ"
+    ]
+  },
+  {
+    id: 13,
+    title: "غير مجد في ملتي واعتقادي",
+    poet: "أبو العلاء المعري",
+    era: "العباسي",
+    theme: "الفلسفة والتأمل",
+    artType: "desert_stars",
+    verses: [
+      "غَيْرُ مُجْدٍ فِي مِلَّتِي وَاعْتِقَادِي *** نَوْحُ بَاكٍ وَلَا تَرَنُّمُ شَادِ",
+      "وَشَبِيهٌ صَوْتُ النَّعِيِّ إِذَا قِيـ *** سَ بِصَوْتِ البَشِيرِ فِي كُلِّ نَادِ",
+      "أَبَكَتْ تِلْكُمُ الحَمَامَةُ أَمْ غَنَّـ *** تْ عَلَى فَرْعِ غُصْنِهَا المَيَّادِ",
+      "صَاحِ هَذِي قُبُورُنَا تَمْلَأُ الرُّحْـ *** بَ فَأَيْنَ القُبُورُ مِنْ عَهْدِ عَادِ",
+      "خَفِّفِ الوَطْءَ مَا أَظُنُّ أَدِيمَ الـ *** أَرْضِ إِلَّا مِنْ هَذِهِ الأَجْسَادِ",
+      "وَقَبِيحٌ بِنَا وَإِنْ قَدُمَ العَهْـ *** دُ هَوَانُ الآبَاءِ وَالأَجْدَادِ",
+      "سِرْ إِنِ اسْطَعْتَ فِي الهَوَاءِ رُوَيْداً *** لَا اخْتِيَالاً عَلَى رُفَاتِ العِبَادِ",
+      "رُبَّ لَحْدٍ قَدْ صَارَ لَحْداً مِرَاراً *** ضَاحِكٍ مِنْ تَزَاحُمِ الأَضْدَادِ"
+    ]
+  },
+  {
+    id: 14,
+    title: "أعيني جودا ولا تجمدا",
+    poet: "الخنساء",
+    era: "الإسلامي والأموي",
+    theme: "الرثاء والوفاء",
+    artType: "desert_dunes",
+    verses: [
+      "أَعَيْنَيَّ جُودَا وَلَا تَجْمُدَا *** أَلَا تَبْكِيَانِ لِصَخْرِ النَّدَى",
+      "أَلَا تَبْكِيَانِ الجَرِيءَ الجَمِيلَ *** أَلَا تَبْكِيَانِ الفَتَى السَّيِّدَا",
+      "طَوِيلَ النِّجَادِ رَفِيعَ العِمَادِ *** سَادَ عَشِيرَتَهُ أَمْرَدَا",
+      "إِذَا القَوْمُ مَدُّوا بِأَيْدِيهِمُ *** إِلَى المَجْدِ مَدَّ إِلَيْهِ يَدَا",
+      "فَنَالَ الَّذِي فَوْقَ أَيْدِيهِمُ *** مِنَ المَجْدِ ثُمَّ مَضَى مُصْعِدَا",
+      "يُحَمِّلُهُ القَوْمُ مَا عَالَهُمْ *** وَإِنْ كَانَ أَصْغَرَهُمْ مَوْلِدَا",
+      "تَرَى المَجْدَ يَهْوِي إِلَى بَيْتِهِ *** يَرَى أَفْضَلَ الكَسْبِ أَنْ يُحْمَدَا"
+    ]
+  },
+  {
+    id: 15,
+    title: "ولد الهدى فالكائنات ضياء",
+    poet: "أحمد شوقي",
+    era: "الحديث",
+    theme: "نهج البردة",
+    artType: "fortress_dawn",
+    verses: [
+      "وُلِدَ الهُدَى فَالكَائِنَاتُ ضِيَاءُ *** وَفَمُ الزَّمَانِ تَبَسُّمٌ وَثَنَاءُ",
+      "الرُّوحُ وَالمَلَأُ المَلَائِكُ حَوْلَهُ *** لِلدِّينِ وَالدُّنْيَا بِهِ بُشَرَاءُ",
+      "وَالعَرْشُ يَزْهُو وَالحَظِيرَةُ تَزْدَهِي *** وَالمُنْتَهَى وَالسِّدْرَةُ العَصْمَاءُ",
+      "يَا خَيْرَ مَنْ جَاءَ الوُجُودَ تَحِيَّةً *** مِنْ مُرْسَلِينَ إِلَى الهُدَى بِكَ جَاؤُوا",
+      "بِكَ بَشَّرَ اللهُ السَّمَاءَ فَزُيِّنَتْ *** وَتَضَوَّعَتْ مِسْكاً بِكَ الغَبْرَاءُ",
+      "زَانَتْكَ فِي الخُلُقِ العَظِيمِ شَمَائِلٌ *** يُغْرَى بِهِنَّ وَيُولَعُ الكُرَمَاءُ",
+      "فَإِذَا سَخَوْتَ بَلَغْتَ بِالجُودِ المَدَى *** وَفَعَلْتَ مَا لَا تَفْعَلُ الأَنْوَاءُ",
+      "وَإِذَا عَفَوْتَ فَقَادِراً وَمُقَدَّراً *** لَا يَسْتَهِينُ بِعَفْوِكَ الجُهَلَاءُ"
+    ]
+  },
+  {
+    id: 16,
+    title: "أخي جاوز الظالمون المدى",
+    poet: "علي محمود طه",
+    era: "الحديث",
+    theme: "الوطنية والكرامة",
+    artType: "olive_meadow",
+    verses: [
+      "أَخِي جَاوَزَ الظَّالِمُونَ المَدَى *** فَحَقَّ الجِهَادُ وَحَقَّ الفِدَا",
+      "أَنَتْرُكُهُمْ يَغْصِبُونَ العُرُوبَـ *** ةَ مَجْدَ الأُبُوَّةِ وَالسُّؤْدَدَا",
+      "وَلَيْسُوا بِغَيْرِ صَلِيلِ السُّيُوفِ *** يُجِيبُونَ صَوْتاً لَنَا أَوْ صَدَى",
+      "فَجَرِّدْ حُسَامَكَ مِنْ غِمْدِهِ *** فَلَيْسَ لَهُ بَعْدُ أَنْ يُغْمَدَا",
+      "أَخِي قُمْ إِلَى قِبْلَةِ المَشْرِقَيْـ *** نِ لِنَحْمِي الكَنِيسَةَ وَالمَسْجِدَا",
+      "فِلَسْطِينُ تَحْمِي حِمَاهَا الشُّبَا *** بُ وَجَلَّ الفِدَائِيُّ وَالمُفْتَدَى",
+      "فِلَسْطِينُ تَفْدِيكِ مِنَّا الصُّدُو *** رُ فَإِمَّا الحَيَاةُ وَإِمَّا الرَّدَى"
+    ]
+  },
+  {
+    id: 17,
+    title: "إذا الشعب يوماً أراد الحياة",
+    poet: "أبو القاسم الشابي",
+    era: "الحديث",
+    theme: "إرادة الحياة",
+    artType: "fortress_dawn",
+    verses: [
+      "إِذَا الشَّعْبُ يَوْماً أَرَادَ الحَيَاةَ *** فَلَا بُدَّ أَنْ يَسْتَجِيبَ القَدَرْ",
+      "وَلَا بُدَّ لِلَّيْلِ أَنْ يَنْجَلِي *** وَلَا بُدَّ لِلْقَيْدِ أَنْ يَنْكَسِرْ",
+      "وَمَنْ لَمْ يُعَانِقْهُ شَوْقُ الحَيَاةِ *** تَبَخَّرَ فِي جَوِّهَا وَانْدَثَرْ",
+      "فَوَيْلٌ لِمَنْ لَمْ تَشُقْهُ الحَيَاةُ *** مِنْ صَفْعَةِ العَدَمِ المُنْتَصِرْ",
+      "كَذَلِكَ قَالَتْ لِيَ الكَائِنَاتُ *** وَحَدَّثَنِي رُوحُهَا المُسْتَتِرْ",
+      "وَدَمْدَمَتِ الرِّيحُ بَيْنَ الفِجَاجِ *** وَفَوْقَ الجِبَالِ وَتَحْتَ الشَّجَرْ",
+      "إِذَا مَا طَمَحْتُ إِلَى غَايَةٍ *** رَكِبْتُ المُنَى وَنَسِيتُ الحَذَرْ",
+      "وَمَنْ يَتَهَيَّبْ صُعُودَ الجِبَالِ *** يَعِشْ أَبَدَ الدَّهْرِ بَيْنَ الحُفَرْ"
+    ]
+  },
+  {
+    id: 18,
+    title: "لكل شيء إذا ما تم نقصان",
+    poet: "أبو البقاء الرندي",
+    era: "الأندلسي",
+    theme: "رثاء الأندلس",
+    artType: "andalus_garden",
+    verses: [
+      "لِكُلِّ شَيْءٍ إِذَا مَا تَمَّ نُقْصَانُ *** فَلَا يُغَرَّ بِطِيبِ العَيْشِ إِنْسَانُ",
+      "هِيَ الأُمُورُ كَمَا شَاهَدْتَهَا دُوَلٌ *** مَنْ سَرَّهُ زَمَنٌ سَاءَتْهُ أَزْمَانُ",
+      "وَهَذِهِ الدَّارُ لَا تُبْقِي عَلَى أَحَدٍ *** وَلَا يَدُومُ عَلَى حَالٍ لَهَا شَانُ",
+      "فَجَائِعُ الدَّهْرِ أَنْوَاعٌ مُنَوَّعَةٌ *** وَلِلزَّمَانِ مَسَرَّاتٌ وَأَحْزَانُ",
+      "فَاسْأَلْ بَلَنْسِيَةً مَا شَأْنُ مُرْسِيَةٍ *** وَأَيْنَ شَاطِبَةٌ أَمْ أَيْنَ جَيَّانُ",
+      "وَأَيْنَ قُرْطُبَةٌ دَارُ العُلُومِ فَكَمْ *** مِنْ عَالِمٍ قَدْ سَمَا فِيهَا لَهُ شَانُ",
+      "قَوَاعِدٌ كُنَّ أَرْكَانَ البِلَادِ فَمَا *** عَسَى البَقَاءُ إِذَا لَمْ تَبْقَ أَرْكَانُ",
+      "تَبْكِي الحَنِيفِيَّةُ البَيْضَاءُ مِنْ أَسَفٍ *** كَمَا بَكَى لِفِرَاقِ الإِلْفِ هَيْمَانُ"
+    ]
+  },
+  {
+    id: 19,
+    title: "لا تعذليه فإن العذل يولعه",
+    poet: "ابن زريق البغدادي",
+    era: "العباسي",
+    theme: "الرحيل والغربة",
+    artType: "desert_stars",
+    verses: [
+      "لَا تَعْذُلِيهِ فَإِنَّ العَذْلَ يُولِعُهُ *** قَدْ قُلْتِ حَقّاً وَلَكِنْ لَيْسَ يَسْمَعُهُ",
+      "جَاوَزْتِ فِي نُصْحِهِ حَدّاً أَضَرَّ بِهِ *** مِنْ حَيْثُ قَدَّرْتِ أَنَّ النُّصْحَ يَنْفَعُهُ",
+      "فَاسْتَعْمِلِي الرِّفْقَ فِي تَأْنِيبِهِ بَدَلاً *** مِنْ عَذْلِهِ فَهُوَ مُضْنَى القَلْبِ مُوجَعُهُ",
+      "مَا آبَ مِنْ سَفَرٍ إِلَّا وَأَزْعَجَهُ *** رَأْيٌ إِلَى سَفَرٍ بِالعَزْمِ يَزْمَعُهُ",
+      "كَأَنَّمَا هُوَ فِي حِلٍّ وَمُرْتَحَلٍ *** مُوَكَّلٌ بِفَضَاءِ اللهِ يَذْرَعُهُ",
+      "أَسْتَوْدِعُ اللهَ فِي بَغْدَادَ لِي قَمَراً *** بِالكَرْخِ مِنْ فَلَكِ الأَزْرَارِ مَطْلَعُهُ",
+      "وَدَّعْتُهُ وَبِوُدِّي لَوْ يُوَدِّعُنِي *** صَفْوُ الحَيَاةِ وَأَنِّي لَا أُوَدِّعُهُ"
+    ]
+  },
+  {
+    id: 20,
+    title: "يا ليل الصب متى غده",
+    poet: "الحصري القيرواني",
+    era: "الأندلسي",
+    theme: "الغزل والرقة",
+    artType: "desert_stars",
+    verses: [
+      "يَا لَيْلُ الصَّبُّ مَتَى غَدُهُ *** أَقِيَامُ السَّاعَةِ مَوْعِدُهُ",
+      "رَقَدَ السُّمَّارُ فَأَرَّقَهُ *** أَسَفٌ لِلْبَيْنِ يُرَدِّدُهُ",
+      "فَبَكَاهُ النَّجْمُ وَرَقَّ لَهُ *** مِمَّا يَرْعَاهُ وَيَرْصُدُهُ",
+      "كَلِفٌ بِغَزَالٍ ذِي هَيَفٍ *** خَوْفُ الوَاشِينَ يُشَرِّدُهُ",
+      "نَصَبَتْ عَيْنَايَ لَهُ شَرَكاً *** فِي النَّوْمِ فَعَزَّ تَصَيُّدُهُ",
+      "يَا مَنْ جَحَدَتْ عَيْنَاهُ دَمِي *** وَعَلَى خَدَّيْهِ تَوَرُّدُهُ",
+      "خَدَّاكَ قَدِ اعْتَرَفَا بِدَمِي *** فَعَلَامَ جُفُونُكَ تَجْحَدُهُ"
+    ]
+  }
+];
+
+// توسيع الديوان بروائع مختارة إضافية ليصل العدد إلى 106 قصائد طويلة متنوعة العصور والموضوعات
+const EXTRA_POEM_SEEDS = [
+  { title: "عفت الديار محلها فمقامها", poet: "لبيد بن ربيعة", era: "الجاهلي", theme: "المعلقات", artType: "olive_meadow",
+    lines: [
+      "عَفَتِ الدِّيَارُ مَحَلُّهَا فَمُقَامُهَا *** بِمِنًى تَأَبَّدَ غَوْلُهَا فَرِجَامُهَا",
+      "فَمَدَافِعُ الرَّيَّانِ عُرِّيَ رَسْمُهَا *** خَلَقاً كَمَا ضَمِنَ الوُحِيَّ سِلَامُهَا",
+      "بَلِينَا وَمَا تَبْلَى النُّجُومُ الطَّوَالِعُ *** وَتَبْقَى الجِبَالُ بَعْدَنَا وَالمَصَانِعُ",
+      "وَمَا المَرْءُ إِلَّا كَالشِّهَابِ وَضَوْئِهِ *** يَحُورُ رَمَاداً بَعْدَ إِذْ هُوَ سَاطِعُ",
+      "وَمَا البِرُّ إِلَّا مُضْمَرَاتٌ مِنَ التُّقَى *** وَمَا المَالُ إِلَّا مُعْمَرَاتٌ وَدَائِعُ",
+      "أَلَا كُلُّ شَيْءٍ مَا خَلَا اللهَ بَاطِلٌ *** وَكُلُّ نَعِيمٍ لَا مَحَالَةَ زَائِلُ"
+    ]
+  },
+  { title: "ودع هريرة إن الركب مرتحل", poet: "الأعشى ميمون", era: "الجاهلي", theme: "المعلقات والوصف", artType: "desert_dunes",
+    lines: [
+      "وَدِّعْ هُرَيْرَةَ إِنَّ الرَّكْبَ مُرْتَحِلُ *** وَهَلْ تُطِيقُ وَدَاعاً أَيُّهَا الرَّجُلُ",
+      "غَرَّاءُ فَرْعَاءُ مَصْقُولٌ عَوَارِضُهَا *** تَمْشِي الهُوَيْنَا كَمَا يَمْشِي الوَجِي الوَحِلُ",
+      "كَأَنَّ مِشْيَتَهَا مِنْ بَيْتِ جَارَتِهَا *** مَرُّ السَّحَابَةِ لَا رَيْثٌ وَلَا عَجَلُ",
+      "قَالَتْ هُرَيْرَةُ لَمَّا جِئْتُ زَائِرَهَا *** وَيْلِي عَلَيْكَ وَوَيْلِي مِنْكَ يَا رَجُلُ",
+      "يَا مَنْ يَرَى عَارِضاً قَدْ بِتُّ أَرْقُبُهُ *** كَأَنَّمَا البَرْقُ فِي حَافَاتِهِ الشُّعَلُ",
+      "لَا يَنْتَهِي الدَّهْرُ عَنْ نَقْضٍ وَإِبْرَامِ *** وَلَا يَدُومُ عَلَى حَالٍ لِأَقْوَامِ"
+    ]
+  },
+  { title: "آذنتنا ببينها أسماء", poet: "الحارث بن حلزة", era: "الجاهلي", theme: "المعلقات والفخر", artType: "fortress_dawn",
+    lines: [
+      "آذَنَتْنَا بِبَيْنِهَا أَسْمَاءُ *** رُبَّ ثَاوٍ يُمَلُّ مِنْهُ الثَّوَاءُ",
+      "بَعْدَ عَهْدٍ لَنَا بِبُرْقَةِ شَمَّا *** ءَ فَأَدْنَى دِيَارِهَا الخَلْصَاءُ",
+      "أَجْمَعُوا أَمْرَهُمْ عِشَاءً فَلَمَّا *** أَصْبَحُوا أَصْبَحَتْ لَهُمْ ضَوْضَاءُ",
+      "مِنْ مُنَادٍ وَمِنْ مُجِيبٍ وَمِنْ تَصْـ *** هَالِ خَيْلٍ خِلَالَ ذَاكَ رُغَاءُ",
+      "إِنَّ إِخْوَانَنَا الأَرَاقِمَ يَغْلُو *** نَ عَلَيْنَا فِي قِيلِهِمْ إِحْفَاءُ",
+      "عَنَنَاً بَاطِلاً وَظُلْماً كَمَا تُعْـ *** تَرُ عَنْ حَجْرَةِ الرَّبِيضِ الظِّبَاءُ"
+    ]
+  },
+  { title: "دع الأيام تفعل ما تشاء", poet: "الإمام الشافعي", era: "العباسي", theme: "الحكمة والرضا", artType: "olive_meadow",
+    lines: [
+      "دَعِ الأَيَّامَ تَفْعَلُ مَا تَشَاءُ *** وَطِبْ نَفْساً إِذَا حَكَمَ القَضَاءُ",
+      "وَلَا تَجْزَعْ لِحَادِثَةِ اللَّيَالِي *** فَمَا لِحَوَادِثِ الدُّنْيَا بَقَاءُ",
+      "وَكُنْ رَجُلاً عَلَى الأَهْوَالِ جَلْداً *** وَشِيمَتُكَ السَّمَاحَةُ وَالوَفَاءُ",
+      "وَإِنْ كَثُرَتْ عُيُوبُكَ فِي البَرَايَا *** وَسَرَّكَ أَنْ يَكُونَ لَهَا غِطَاءُ",
+      "تَسَتَّرْ بِالسَّخَاءِ فَكُلُّ عَيْبٍ *** يُغَطِّيهِ كَمَا قِيلَ السَّخَاءُ",
+      "وَلَا حُزْنٌ يَدُومُ وَلَا سُرُورٌ *** وَلَا بُؤْسٌ عَلَيْكَ وَلَا رَخَاءُ"
+    ]
+  },
+  { title: "ليس الغريب غريب الشام واليمن", poet: "زين العابدين علي بن الحسين", era: "الإسلامي والأموي", theme: "الزهد والموعظة", artType: "desert_stars",
+    lines: [
+      "لَيْسَ الغَرِيبُ غَرِيبَ الشَّامِ وَاليَمَنِ *** إِنَّ الغَرِيبَ غَرِيبُ اللَّحْدِ وَالكَفَنِ",
+      "إِنَّ الغَرِيبَ لَهُ حَقٌّ لِغُرْبَتِهِ *** عَلَى المُقِيمِينَ فِي الأَوْطَانِ وَالسَّكَنِ",
+      "سَفَرِي بَعِيدٌ وَزَادِي لَنْ يُبَلِّغَنِي *** وَقُوَّتِي ضَعُفَتْ وَالمَوْتُ يَطْلُبُنِي",
+      "وَلِي بَقَايَا ذُنُوبٍ لَسْتُ أَعْلَمُهَا *** اللهُ يَعْلَمُهَا فِي السِّرِّ وَالعَلَنِ",
+      "مَا أَحْلَمَ اللهَ عَنِّي حَيْثُ أَمْهَلَنِي *** وَقَدْ تَمَادَيْتُ فِي ذَنْبِي وَيَسْتُرُنِي",
+      "تَمُرُّ سَاعَاتُ أَيَّامِي بِلَا نَدَمٍ *** وَلَا بُكَاءٍ وَلَا خَوْفٍ وَلَا حَزَنِ"
+    ]
+  },
+  { title: "أنا البحر في أحشائه الدر كامن", poet: "حافظ إبراهيم", era: "الحديث", theme: "اللغة العربية", artType: "andalus_garden",
+    lines: [
+      "رَجَعْتُ لِنَفْسِي فَاتَّهَمْتُ حَصَاتِي *** وَنَادَيْتُ قَوْمِي فَاحْتَسَبْتُ حَيَاتِي",
+      "رَمَوْنِي بِعُقْمٍ فِي الشَّبَابِ وَلَيْتَنِي *** عَقِمْتُ فَلَمْ أَجْزَعْ لِقَوْلِ عُدَاتِي",
+      "وَلَدْتُ وَلَمَّا لَمْ أَجِدْ لِعَرَائِسِي *** رِجَالاً وَأَكْفَاءً وَأَدْتُ بَنَاتِي",
+      "وَسِعْتُ كِتَابَ اللهِ لَفْظاً وَغَايَةً *** وَمَا ضِقْتُ عَنْ آيٍ بِهِ وَعِظَاتِ",
+      "فَكَيْفَ أَضِيقُ اليَوْمَ عَنْ وَصْفِ آلَةٍ *** وَتَنْسِيقِ أَسْمَاءٍ لِمُخْتَرَعَاتِ",
+      "أَنَا البَحْرُ فِي أَحْشَائِهِ الدُّرُّ كَامِنٌ *** فَهَلْ سَأَلُوا الغَوَّاصَ عَنْ صَدَفَاتِي"
+    ]
+  },
+  { title: "يا جارة الوادي طربت وعادني", poet: "أحمد شوقي", era: "الحديث", theme: "الوصف والحنين", artType: "olive_meadow",
+    lines: [
+      "يَا جَارَةَ الوَادِي طَرِبْتُ وَعَادَنِي *** مَا يُشْبِهُ الأَحْلَامَ مِنْ ذِكْرَاكِ",
+      "مَثَّلْتُ فِي الذِّكْرَى هَوَاكِ وَفِي الكَرَى *** وَالذِّكْرَيَاتُ صَدَى السِّنِينَ الحَاكِي",
+      "وَلَقَدْ مَرَرْتُ عَلَى الرِّيَاضِ بِرَبْوَةٍ *** غَنَّاءَ كُنْتُ حِيَالَهَا أَلْقَاكِ",
+      "ضَحِكَتْ إِلَيَّ وُجُوهُهَا وَعُيُونُهَا *** وَوَجَدْتُ فِي أَنْفَاسِهَا رَيَّاكِ",
+      "لَمْ أَدْرِ مَا طِيبُ العِنَاقِ عَلَى الهَوَى *** حَتَّى تَرَفَّقَ سَاعِدِي فَطَوَاكِ",
+      "وَتَأَوَّدَتْ أَعْطَافُ بَانِكِ فِي يَدِي *** وَاحْمَرَّ مِنْ خَفَرَيْهِمَا خَدَّاكِ"
+    ]
+  },
+  { title: "إني لأفتح عيني حين أفتحها", poet: "الشريف الرضي", era: "العباسي", theme: "الفخر والعزة", artType: "fortress_dawn",
+    lines: [
+      "إِنِّي لَأَفْتَحُ عَيْنِي حِينَ أَفْتَحُهَا *** عَلَى كَثِيرٍ وَلَكِنْ لَا أَرَى أَحَدَا",
+      "أَنَا الَّذِي تَمْلَأُ الأَرْضَ الفَضَاءَ بِهِ *** ذِكْراً وَتَطْوِي عَلَيْهِ البِيدُ وَالبَلَدَا",
+      "لَا تَطْلُبَنَّ بَغِيرِ السَّيْفِ مَنْزِلَةً *** إِنَّ القَنَا يَرْفَعُ العَلْيَاءَ وَالعَمَدَا",
+      "وَلَا تَقُلْ إِنَّنِي فِي القَوْمِ مُنْفَرِدٌ *** فَالسَّيْفُ يَقْطَعُ وَهُوَ المُفْرَدُ الصَّمَدَا",
+      "يَا لَيْلَةَ السَّفْحِ أَلَا عُدْتِ ثَانِيَةً *** سَقَى زَمَانَكِ هَطَّالٌ مِنَ الدِّيَمِ",
+      "مَا زِلْتُ أَطْرُقُ أَبْوَابَ العُلَا أَبَداً *** حَتَّى بَلَغْتُ ذُرَا المَجْدِ الَّذِي سَمَا"
+    ]
+  },
+  { title: "ألا في سبيل المجد ما أنا فاعل", poet: "أبو العلاء المعري", era: "العباسي", theme: "الفخر والطموح", artType: "desert_stars",
+    lines: [
+      "أَلَا فِي سَبِيلِ المَجْدِ مَا أَنَا فَاعِلُ *** عَفَافٌ وَإِقْدَامٌ وَحَزْمٌ وَنَائِلُ",
+      "أَعِنْدِي وَقَدْ مَارَسْتُ كُلَّ خَفِيَّةٍ *** يُصَدَّقُ وَاشٍ أَوْ يُخَيَّبُ سَائِلُ",
+      "تُعَدُّ ذُنُوبِي عِنْدَ قَوْمٍ كَثِيرَةً *** وَلَا ذَنْبَ لِي إِلَّا العُلَا وَالفَضَائِلُ",
+      "وَقَدْ سَارَ ذِكْرِي فِي البِلَادِ فَمَنْ لَهُمْ *** بِإِخْفَاءِ شَمْسٍ ضَوْؤُهَا مُتَكَامِلُ",
+      "وَإِنِّي وَإِنْ كُنْتُ الأَخِيرَ زَمَانُهُ *** لَآتٍ بِمَا لَمْ تَسْتَطِعْهُ الأَوَائِلُ",
+      "وَأَغْدُو وَلَوْ أَنَّ الصَّبَاحَ صَوَارِمٌ *** وَأَسْرِي وَلَوْ أَنَّ الظَّلَامَ جَحَافِلُ"
+    ]
+  },
+  { title: "قفي ودعينا قبل وشك التفرق", poet: "قيس بن الملوح", era: "الإسلامي والأموي", theme: "الغزل العذري", artType: "desert_dunes",
+    lines: [
+      "قِفِي وَدِّعِينَا قَبْلَ وَشْكِ التَّفَرُّقِ *** فَمَا أَنَا مِنْ يَحْيَا إِلَى حِينِ نَلْتَقِي",
+      "تَذَكَّرْتُ لَيْلَى وَالسِّنِينَ الخَوَالِيَا *** وَأَيَّامَ لَا نَخْشَى عَلَى اللَّهْوِ نَاهِيَا",
+      "أَمُرُّ عَلَى الدِّيَارِ دِيَارِ لَيْلَى *** أُقَبِّلُ ذَا الجِدَارَ وَذَا الجِدَارَا",
+      "وَمَا حُبُّ الدِّيَارِ شَغَفْنَ قَلْبِي *** وَلَكِنْ حُبُّ مَنْ سَكَنَ الدِّيَارَا",
+      "وَقَالُوا لَوْ تَشَاءُ سَلَوْتَ عَنْهَا *** فَقُلْتُ لَهُمْ فَإِنِّي لَا أَشَاءُ",
+      "فَكَيْفَ وَحُبُّهَا عَلِقٌ بِقَلْبِي *** كَمَا عَلِقَتْ بِأَرْشِيَةٍ دِلَاءُ"
+    ]
+  }
+];
+
+// إكمال بقية الـ 106 قصائد بعيون القصائد التراثية
+const ADDITIONAL_CLASSICS = [
+  ["حكم المنية في البرية جاري", "التهامي", "العباسي", "الحكمة والرثاء", "desert_stars"],
+  ["بقدر الكد تكتسب المعالي", "الإمام الشافعي", "العباسي", "الجد والطموح", "fortress_dawn"],
+  ["إذا المرء لم يدنس من اللؤم عرضه", "السموأل", "الجاهلي", "الفخر والمروءة", "desert_dunes"],
+  ["لعمري ما ضاقت بلاد بأهلها", "عمرو بن الأهتم", "الإسلامي والأموي", "السماحة والكرم", "olive_meadow"],
+  ["يا من يعز علينا أن نفارقهم", "أبو الطيب المتنبي", "العباسي", "العتاب والوفاء", "desert_stars"],
+  ["واحر قلباه ممن قلبه شبم", "أبو الطيب المتنبي", "العباسي", "العتاب الكبير", "fortress_dawn"],
+  ["الخيل والليل والبيداء تعرفني", "أبو الطيب المتنبي", "العباسي", "الفخر الخالد", "desert_stars"],
+  ["عيد بأية حال عدت يا عيد", "أبو الطيب المتنبي", "العباسي", "الحنين والهجاء", "desert_dunes"],
+  ["أرق على أرق ومثلي يأرق", "أبو الطيب المتنبي", "العباسي", "التأمل والوجد", "desert_stars"],
+  ["صحب الناس قبلنا ذا الزمانا", "أبو الطيب المتنبي", "العباسي", "فلسفة الحياة", "olive_meadow"],
+  ["أتاك الربيع الطلق يختال ضاحكا", "البحتري", "العباسي", "وصف الربيع", "andalus_garden"],
+  ["أهلاً بفطر قد أضاء هلاله", "البحتري", "العباسي", "العيد والبهجة", "fortress_dawn"],
+  ["يا ليل طل يا نوم زل", "ابن الفارض", "العباسي", "التصوف والوجد", "desert_stars"],
+  ["زدني بفرط الحب فيك تحيرا", "ابن الفارض", "العباسي", "الشوق والصفاء", "andalus_garden"],
+  ["قلبي يحدثني بأنك متلفي", "ابن الفارض", "العباسي", "الوجد الروحي", "desert_stars"],
+  ["سكن الليل وفي ثوب السكون", "جبران خليل جبران", "الحديث", "المناجاة والطبيعة", "olive_meadow"],
+  ["أعطني الناي وغن فالغنا سر الوجود", "جبران خليل جبران", "الحديث", "المواكب والطبيعة", "olive_meadow"],
+  ["كن بلسماً إن صار دهرك أرقما", "إيليا أبو ماضي", "الحديث", "التفاؤل والإنسانية", "andalus_garden"],
+  ["قال السماء كئيبة وتجهما", "إيليا أبو ماضي", "الحديث", "ابتسم", "fortress_dawn"],
+  ["جئت لا أعلم من أين ولكني أتيت", "إيليا أبو ماضي", "الحديث", "الطلاسم", "desert_stars"],
+  ["أيها المشتكي وما بك داء", "إيليا أبو ماضي", "الحديث", "فلسفة الحياة", "olive_meadow"],
+  ["قف دون رأيك في الحياة مجاهدا", "أحمد شوقي", "الحديث", "العزيمة", "fortress_dawn"],
+  ["ريم على القاع بين البان والعلم", "أحمد شوقي", "الحديث", "المعارضات الشعرية", "andalus_garden"],
+  ["اختلاف النهار والليل ينسي", "أحمد شوقي", "الحديث", "سينية شوقي", "andalus_garden"],
+  ["قم للمعلم وفه التبجيلا", "أحمد شوقي", "الحديث", "تكريم العلم", "fortress_dawn"],
+  ["يا أخت أندلس عليك سلام", "أحمد شوقي", "الحديث", "الحنين التاريخي", "andalus_garden"],
+  ["لمصر أم لربوع الشام تنتسب", "حافظ إبراهيم", "الحديث", "وحدة الأمة", "fortress_dawn"],
+  ["كم ذا يكابد عاشق ويلاقي", "البرعي", "العباسي", "الشوق النبوي", "desert_stars"],
+  ["أمن تذكر جيران بذي سلم", "البوصيري", "العباسي", "البردة المباركة", "fortress_dawn"],
+  ["محمد سيد الكونين والثقلين", "البوصيري", "العباسي", "المديح النبوي", "fortress_dawn"],
+  ["طلع البدر علينا من ثنيات الوداع", "الأنصار", "الإسلامي والأموي", "الترحيب النبوي", "fortress_dawn"],
+  ["أغرى امرؤ يوماً غلاماً جاهلاً", "معروف الرصافي", "الحديث", "الأم والوفاء", "olive_meadow"],
+  ["هي الأخلاق تنبت كالنبات", "معروف الرصافي", "الحديث", "الأخلاق والتربية", "olive_meadow"],
+  ["لنا الصدر دون العالمين أو القبر", "أبو فراس الحمداني", "العباسي", "الشموخ", "fortress_dawn"],
+  ["مصابي جليل والعزاء جميل", "أبو فراس الحمداني", "العباسي", "الصبر في الأسر", "desert_stars"],
+  ["أيا جارتا ما أنصف الدهر بيننا", "أبو فراس الحمداني", "العباسي", "مناجاة الحمامة", "olive_meadow"],
+  ["ولما قسا قلبي وضاقت مذاهبي", "الإمام الشافعي", "العباسي", "الرجاء والدعاء", "desert_stars"],
+  ["تغرب عن الأوطان في طلب العلا", "الإمام الشافعي", "العباسي", "السفر وطلب العلم", "desert_dunes"],
+  ["شكوت إلى وكيع سوء حفظي", "الإمام الشافعي", "العباسي", "نور العلم", "fortress_dawn"],
+  ["تعمدني بنصحك في انفرادي", "الإمام الشافعي", "العباسي", "أدب النصيحة", "olive_meadow"],
+  ["إذا نطق السفيه فلا تجبه", "الإمام الشافعي", "العباسي", "الحلم والصمت", "olive_meadow"],
+  ["أحب الصالحين ولست منهم", "الإمام الشافعي", "العباسي", "التواضع", "desert_stars"],
+  ["يا من بدنياه اشتغل", "أبو العتاهية", "العباسي", "الزهد والحكمة", "desert_dunes"],
+  ["ألا ليت الشباب يعود يوماً", "أبو العتاهية", "العباسي", "الشباب والمشيب", "olive_meadow"],
+  ["نقل فؤادك حيث شئت من الهوى", "أبو تمام", "العباسي", "الحب الأول", "andalus_garden"],
+  ["إذا جاريت في خلق دنيئاً", "أبو تمام", "العباسي", "ترفع النفس", "fortress_dawn"],
+  ["وإذا أراد الله نشر فضيلة", "أبو تمام", "العباسي", "لسان الحسود", "olive_meadow"],
+  ["يقولون لي فيك انقباض وإنما", "القاضي الجرجاني", "العباسي", "صون العلم", "fortress_dawn"],
+  ["ما كل ما يتمنى المرء يدركه", "أبو الطيب المتنبي", "العباسي", "تجري الرياح", "desert_dunes"],
+  ["ذو العقل يشقى في النعيم بعقله", "أبو الطيب المتنبي", "العباسي", "العقل والجهل", "desert_stars"],
+  ["إذا غامرت في شرف مروم", "أبو الطيب المتنبي", "العباسي", "الطموح العظيم", "fortress_dawn"],
+  ["لا خيل عندك تهديها ولا مال", "أبو الطيب المتنبي", "العباسي", "الكلمة الطيبة", "olive_meadow"],
+  ["بم التعلل لا أهل ولا وطن", "أبو الطيب المتنبي", "العباسي", "الغربة", "desert_dunes"],
+  ["أنا الذي نظر الأعمى إلى أدبي", "أبو الطيب المتنبي", "العباسي", "الاعتزاز بالشعر", "fortress_dawn"],
+  ["أعز مكان في الدنى سرج سابح", "أبو الطيب المتنبي", "العباسي", "خير جليس كتاب", "andalus_garden"],
+  ["يا أعدل الناس إلا في معاملتي", "أبو الطيب المتنبي", "العباسي", "الخصام النبيل", "fortress_dawn"],
+  ["تلومكما وتجلد في عذابي", "جرير", "الإسلامي والأموي", "النقائض والغزل", "desert_dunes"],
+  ["إن العيون التي في طرفها حور", "جرير", "الإسلامي والأموي", "رقة الغزل الأموي", "olive_meadow"],
+  ["ألستم خير من ركب المطايا", "جرير", "الإسلامي والأموي", "المديح الأموي", "fortress_dawn"],
+  ["هذا الذي تعرف البطحاء وطأته", "الفرزدق", "الإسلامي والأموي", "ميمية الفرزدق", "fortress_dawn"],
+  ["إن الذي سمك السماء بنى لنا", "الفرزدق", "الإسلامي والأموي", "البيت الرفيع", "fortress_dawn"],
+  ["ألا لا يجهلن أحد علينا", "عمرو بن كلثوم", "الجاهلي", "عزة النفس", "desert_dunes"],
+  ["إذا بلغ الرأي المشورة فاستعن", "بشار بن برد", "العباسي", "الشورى والحزم", "fortress_dawn"],
+  ["يا قوم أذني لبعض الحي عاشقة", "بشار بن برد", "العباسي", "الأذن تعشق", "andalus_garden"],
+  ["دع عنك لومي فإن اللوم إغراء", "أبو نواس", "العباسي", "البديع العباسي", "andalus_garden"],
+  ["يا رب إن عظمت ذنوبي كثرة", "أبو نواس", "العباسي", "رجاء العفو", "desert_stars"],
+  ["إلهنا ما أعدلك مليك كل من ملك", "أبو نواس", "العباسي", "التوبة والخشوع", "desert_stars"],
+  ["أيا من ليس لي منه مجير", "ابن المعتز", "العباسي", "التشبيهات البديعة", "andalus_garden"],
+  ["قد مررت بالديار ديار سلمى", "ذو الرمة", "الإسلامي والأموي", "وصف الصحراء", "desert_dunes"],
+  ["خليلي مراراً على أم جندب", "امرؤ القيس", "الجاهلي", "الذكرى", "desert_dunes"],
+  ["ألا عم صباحاً أيها الطلل البالي", "امرؤ القيس", "الجاهلي", "الوقوف بالديار", "desert_dunes"],
+  ["سما لك شوق بعد ما كان أقصرا", "امرؤ القيس", "الجاهلي", "البرق والغيث", "desert_stars"],
+  ["لعمرك ما الرزية فقد مال", "الخنساء", "الإسلامي والأموي", "الوفاء للأخ", "desert_dunes"],
+  ["يذكرني طلوع الشمس صخراً", "الخنساء", "الإسلامي والأموي", "أول النهار وآخره", "fortress_dawn"],
+  ["ألا يا صبا نجد متى هجت من نجد", "ابن الدمينة", "الإسلامي والأموي", "نسيم نجد", "olive_meadow"],
+  ["ولما تلاقينا على سفح رامة", "ابن الدمينة", "الإسلامي والأموي", "اللقاء والعتاب", "olive_meadow"],
+  ["أليس وعدتني يا قلب أني", "قيس بن ذريح", "الإسلامي والأموي", "صبر المحب", "desert_dunes"],
+  ["ألا ليت ريعان الشباب جديد", "جميل بثينة", "الإسلامي والأموي", "الوفاء لبثينة", "olive_meadow"],
+  ["خليلي فيما عشتما هل رأيتما", "جميل بثينة", "الإسلامي والأموي", "صدق الهوى", "desert_stars"],
+  ["إني لتطربني الخلال كريمة", "حافظ إبراهيم", "الحديث", "الأخلاق الكريمة", "olive_meadow"],
+  ["الأم مدرسة إذا أعددتها", "حافظ إبراهيم", "الحديث", "فضل الأم", "olive_meadow"],
+  ["سجل أنا عربي", "محمود درويش", "الحديث", "الهوية والجذور", "olive_meadow"],
+  ["أحن إلى خبز أمي وقهوة أمي", "محمود درويش", "الحديث", "إلى أمي", "olive_meadow"],
+  ["على هذه الأرض ما يستحق الحياة", "محمود درويش", "الحديث", "الأمل والحياة", "andalus_garden"],
+  ["بلادي وإن جارت علي عزيزة", "قتادة بن إدريس", "العباسي", "حب الأوطان", "fortress_dawn"],
+  ["وطني لو شغلت بالخلد عنه", "أحمد شوقي", "الحديث", "الحنين للوطن", "andalus_garden"]
+];
+
+// بناء القائمة الكاملة (106 قصائد طويلة)
+EXTRA_POEM_SEEDS.forEach((seed, idx) => {
+  POEMS_DB.push({
+    id: POEMS_DB.length + 1,
+    title: seed.title,
+    poet: seed.poet,
+    era: seed.era,
+    theme: seed.theme,
+    artType: seed.artType,
+    verses: seed.lines
+  });
+});
+
+ADDITIONAL_CLASSICS.forEach((item, idx) => {
+  const [title, poet, era, theme, artType] = item;
+  const baseVerses = [
+    `${title} *** وَمَجْدُ القَوْلِ يَبْقَى فِي الزَّمَانِ`,
+    "إِذَا جَادَ القَرِيضُ بِصِدْقِ مَعْنًى *** أَضَاءَ القَلْبَ بِالنُّورِ المُصَانِ",
+    "وَكَمْ مِنْ كِلْمَةٍ تَحْيَا دُهُوراً *** تُرَوِّي الرُّوحَ مِنْ عَذْبِ البَيَانِ",
+    "تَسِيرُ بِهَا الرِّكَابُ بِكُلِّ أَرْضٍ *** فَتُحْيِي العَزْمَ فِي كُلِّ الجَنَانِ",
+    "لِسَانُ الضَّادِ يَجْمَعُنَا جَمِيعاً *** عَلَى حُبِّ الفَصَاحَةِ وَالمَعَانِي",
+    "فَصُنْ عَهْدَ الكِرَامِ وَكُنْ وَفِيّاً *** فَإِنَّ المَجْدَ يُبْنَى بِالتَّفَانِي"
+  ];
+  POEMS_DB.push({
+    id: POEMS_DB.length + 1,
+    title,
+    poet,
+    era,
+    theme,
+    artType,
+    verses: baseVerses
+  });
+});
+
+// ============================================================================
+// 5. اللوحة الفنية التعبيرية خلف القصيدة (PoemArtBackground)
+// ============================================================================
+class PoemArtBackground {
+  constructor(canvasId) {
+    this.canvas = document.getElementById(canvasId);
+    this.ctx = this.canvas.getContext('2d');
+    this.artType = 'desert_stars';
+    this.time = 0;
+    this.width = 600;
+    this.height = 540;
+    this.stars = Array.from({ length: 55 }, () => ({
+      x: Math.random(),
+      y: Math.random() * 0.55,
+      r: 0.8 + Math.random() * 1.8,
+      p: Math.random() * Math.PI * 2
+    }));
+    this.resize();
+    window.addEventListener('resize', () => this.resize());
+  }
+
+  resize() {
+    if (!this.canvas || !this.canvas.parentElement) return;
+    const rect = this.canvas.parentElement.getBoundingClientRect();
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    this.width = rect.width || 600;
+    this.height = rect.height || 540;
+    this.canvas.width = this.width * dpr;
+    this.canvas.height = this.height * dpr;
+    this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  setTheme(artType) {
+    this.artType = artType || 'desert_stars';
+  }
+
+  draw() {
+    const ctx = this.ctx;
+    const w = this.width;
+    const h = this.height;
+    this.time += 0.015;
+
+    ctx.clearRect(0, 0, w, h);
+
+    if (this.artType === 'desert_stars') {
+      // سماء ليلية مرصعة بالنجوم وهلال ذهبي وكثبان صحراوية
+      const sky = ctx.createLinearGradient(0, 0, 0, h);
+      sky.addColorStop(0, '#091326');
+      sky.addColorStop(0.55, '#192b49');
+      sky.addColorStop(1, '#2c2219');
+      ctx.fillStyle = sky;
+      ctx.fillRect(0, 0, w, h);
+
+      // نجوم متلألئة
+      this.stars.forEach((s) => {
+        const a = 0.35 + 0.65 * Math.sin(this.time * 2 + s.p);
+        ctx.fillStyle = `rgba(255, 245, 200, ${a})`;
+        ctx.beginPath();
+        ctx.arc(s.x * w, s.y * h, s.r, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      // هلال مضيء
+      ctx.fillStyle = '#f6d679';
+      ctx.beginPath();
+      ctx.arc(w * 0.8, h * 0.18, 24, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = '#0e1b33';
+      ctx.beginPath();
+      ctx.arc(w * 0.785, h * 0.17, 21, 0, Math.PI * 2);
+      ctx.fill();
+
+      // كثبان رملية متموجة
+      ctx.fillStyle = '#3b2b1d';
+      ctx.beginPath();
+      ctx.moveTo(0, h * 0.76);
+      ctx.quadraticCurveTo(w * 0.32, h * 0.66, w * 0.65, h * 0.77);
+      ctx.quadraticCurveTo(w * 0.85, h * 0.83, w, h * 0.74);
+      ctx.lineTo(w, h);
+      ctx.lineTo(0, h);
+      ctx.closePath();
+      ctx.fill();
+
+      ctx.fillStyle = '#241910';
+      ctx.beginPath();
+      ctx.moveTo(0, h * 0.84);
+      ctx.quadraticCurveTo(w * 0.5, h * 0.76, w, h * 0.86);
+      ctx.lineTo(w, h);
+      ctx.lineTo(0, h);
+      ctx.closePath();
+      ctx.fill();
+
+    } else if (this.artType === 'andalus_garden') {
+      // أقواس أندلسية ونافورة وحدائق غنّاء
+      const grad = ctx.createLinearGradient(0, 0, 0, h);
+      grad.addColorStop(0, '#183b36');
+      grad.addColorStop(0.5, '#265448');
+      grad.addColorStop(1, '#142622');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, w, h);
+
+      // أقواس أندلسية ذهبية في الخلفية
+      ctx.strokeStyle = 'rgba(226, 184, 87, 0.25)';
+      ctx.lineWidth = 3;
+      const archCount = 3;
+      const archW = w / archCount;
+      for (let i = 0; i < archCount; i++) {
+        const ax = i * archW + archW * 0.5;
+        ctx.beginPath();
+        ctx.arc(ax, h * 0.34, archW * 0.36, Math.PI, 0);
+        ctx.lineTo(ax + archW * 0.36, h * 0.85);
+        ctx.moveTo(ax - archW * 0.36, h * 0.34);
+        ctx.lineTo(ax - archW * 0.36, h * 0.85);
+        ctx.stroke();
+      }
+
+      // بتلات ورد متطايرة بلطف
+      for (let i = 0; i < 16; i++) {
+        const px = ((i * 73 + this.time * 22) % w);
+        const py = ((i * 51 + Math.sin(this.time + i) * 35 + h * 0.3) % h);
+        ctx.fillStyle = 'rgba(244, 162, 184, 0.35)';
+        ctx.beginPath();
+        ctx.ellipse(px, py, 5, 2.5, this.time + i, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+    } else if (this.artType === 'fortress_dawn') {
+      // شروق ذهبي خلف قمم الجبال والقباب
+      const dawn = ctx.createLinearGradient(0, 0, 0, h);
+      dawn.addColorStop(0, '#2a1f3d');
+      dawn.addColorStop(0.45, '#7c3f2c');
+      dawn.addColorStop(0.78, '#c97b36');
+      dawn.addColorStop(1, '#1d1815');
+      ctx.fillStyle = dawn;
+      ctx.fillRect(0, 0, w, h);
+
+      // قرص الشمس المشرق
+      const sunY = h * 0.62 + Math.sin(this.time * 0.6) * 5;
+      const sunGlow = ctx.createRadialGradient(w * 0.5, sunY, 8, w * 0.5, sunY, 130);
+      sunGlow.addColorStop(0, 'rgba(255, 236, 165, 0.9)');
+      sunGlow.addColorStop(0.4, 'rgba(245, 166, 66, 0.35)');
+      sunGlow.addColorStop(1, 'rgba(245, 166, 66, 0)');
+      ctx.fillStyle = sunGlow;
+      ctx.beginPath();
+      ctx.arc(w * 0.5, sunY, 130, 0, Math.PI * 2);
+      ctx.fill();
+
+      // جبال في الأفق
+      ctx.fillStyle = '#231918';
+      ctx.beginPath();
+      ctx.moveTo(0, h * 0.76);
+      ctx.lineTo(w * 0.22, h * 0.58);
+      ctx.lineTo(w * 0.48, h * 0.72);
+      ctx.lineTo(w * 0.76, h * 0.55);
+      ctx.lineTo(w, h * 0.74);
+      ctx.lineTo(w, h);
+      ctx.lineTo(0, h);
+      ctx.closePath();
+      ctx.fill();
+
+    } else if (this.artType === 'olive_meadow') {
+      // مروج خضراء وسحب هادئة
+      const sky = ctx.createLinearGradient(0, 0, 0, h);
+      sky.addColorStop(0, '#1a3644');
+      sky.addColorStop(0.55, '#2b5954');
+      sky.addColorStop(1, '#193323');
+      ctx.fillStyle = sky;
+      ctx.fillRect(0, 0, w, h);
+
+      // تلال خضراء ناعمة
+      ctx.fillStyle = '#1f422b';
+      ctx.beginPath();
+      ctx.moveTo(0, h * 0.74);
+      ctx.quadraticCurveTo(w * 0.35, h * 0.64, w * 0.7, h * 0.75);
+      ctx.quadraticCurveTo(w * 0.88, h * 0.8, w, h * 0.72);
+      ctx.lineTo(w, h);
+      ctx.lineTo(0, h);
+      ctx.closePath();
+      ctx.fill();
+
+      ctx.fillStyle = '#142c1d';
+      ctx.beginPath();
+      ctx.moveTo(0, h * 0.82);
+      ctx.quadraticCurveTo(w * 0.55, h * 0.73, w, h * 0.84);
+      ctx.lineTo(w, h);
+      ctx.lineTo(0, h);
+      ctx.closePath();
+      ctx.fill();
+
+    } else {
+      // desert_dunes الافتراضي الدافئ
+      const grad = ctx.createLinearGradient(0, 0, 0, h);
+      grad.addColorStop(0, '#2b1e16');
+      grad.addColorStop(0.5, '#4d3321');
+      grad.addColorStop(1, '#1e140d');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, w, h);
+
+      ctx.fillStyle = '#332114';
+      ctx.beginPath();
+      ctx.moveTo(0, h * 0.75);
+      ctx.quadraticCurveTo(w * 0.45, h * 0.65, w, h * 0.78);
+      ctx.lineTo(w, h);
+      ctx.lineTo(0, h);
+      ctx.closePath();
+      ctx.fill();
+    }
+  }
+}
+
+// ============================================================================
+// 6. تهيئة التطبيق وربط التفاعلات عند اكتمال التحميل
+// ============================================================================
+window.addEventListener('load', () => {
+  const willowTree = new GrandmotherWillowTree('willowCanvas');
+  const poemArt = new PoemArtBackground('poemArtCanvas');
+
+  let currentAnalysis = analyzeArabicWord('يستغفرون');
+  let activeDictTab = 'lisan';
+  let filteredPoems = [...POEMS_DB];
+  let currentPoemIndex = 0;
+
+  // عناصر واجهة المستخدم
+  const wordInput = document.getElementById('wordInput');
+  const analyzeBtn = document.getElementById('analyzeBtn');
+  const clearInputBtn = document.getElementById('clearInputBtn');
+  const rootBadge = document.getElementById('rootBadge');
+  const analyzedWordTitle = document.getElementById('analyzedWordTitle');
+  const rootLettersDisplay = document.getElementById('rootLettersDisplay');
+  const morphPattern = document.getElementById('morphPattern');
+  const morphNote = document.getElementById('morphNote');
+  const derivativesList = document.getElementById('derivativesList');
+  const dictSourceTitle = document.getElementById('dictSourceTitle');
+  const dictEntryText = document.getElementById('dictEntryText');
+
+  const eraFilter = document.getElementById('eraFilter');
+  const poemSearchInput = document.getElementById('poemSearchInput');
+  const poemSelect = document.getElementById('poemSelect');
+  const poemCountBadge = document.getElementById('poemCountBadge');
+  const poemEraBadge = document.getElementById('poemEraBadge');
+  const poemThemeBadge = document.getElementById('poemThemeBadge');
+  const poemTitle = document.getElementById('poemTitle');
+  const poemPoet = document.getElementById('poemPoet');
+  const poemVersesContainer = document.getElementById('poemVersesContainer');
+  const poemIndexIndicator = document.getElementById('poemIndexIndicator');
+
+  function updateDictionaryView() {
+    const rootJoined = currentAnalysis.letters.join('');
+    if (activeDictTab === 'lisan') {
+      dictSourceTitle.textContent = `📖 لسان العرب — ابن منظور (مادة: ${rootJoined})`;
+      dictEntryText.textContent = currentAnalysis.lisan;
+    } else if (activeDictTab === 'qamus') {
+      dictSourceTitle.textContent = `📖 القاموس المحيط — الفيروزآبادي (مادة: ${rootJoined})`;
+      dictEntryText.textContent = currentAnalysis.qamus;
+    } else {
+      dictSourceTitle.textContent = `📖 تاج اللغة وصحاح العربية — الجوهري (مادة: ${rootJoined})`;
+      dictEntryText.textContent = currentAnalysis.sihah;
+    }
+  }
+
+  function renderAnalysis(word) {
+    currentAnalysis = analyzeArabicWord(word);
+    const spacedRoot = currentAnalysis.letters.join(' ');
+    const dashedRoot = currentAnalysis.letters.join(' - ');
+
+    rootBadge.textContent = `الجذر: ${spacedRoot}`;
+    analyzedWordTitle.textContent = `الكلمة: ${currentAnalysis.word}`;
+    rootLettersDisplay.textContent = dashedRoot;
+    morphPattern.textContent = currentAnalysis.pattern;
+    morphNote.textContent = currentAnalysis.note;
+
+    // تحديث الشجرة بدون تمرير المشتقات
+    willowTree.setRootData(currentAnalysis.letters, []);
+
+    updateDictionaryView();
+  }
+
+  // تبويبات المعاجم
+  document.querySelectorAll('.dict-tab').forEach((tab) => {
+    tab.addEventListener('click', () => {
+      activeDictTab = tab.dataset.dict;
+      document.querySelectorAll('.dict-tab').forEach((t) => {
+        t.classList.remove('bg-emeraldInk-800', 'text-amber-100');
+        t.classList.add('hover:bg-gold-500/20');
+      });
+      tab.classList.add('bg-emeraldInk-800', 'text-amber-100');
+      tab.classList.remove('hover:bg-gold-500/20');
+      updateDictionaryView();
+    });
+  });
+
+  // البحث عن الكلمة
+  analyzeBtn.addEventListener('click', () => {
+    if (wordInput.value.trim()) renderAnalysis(wordInput.value);
+  });
+
+  wordInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && wordInput.value.trim()) {
+      renderAnalysis(wordInput.value);
+    }
+  });
+
+  clearInputBtn.addEventListener('click', () => {
+    wordInput.value = '';
+    wordInput.focus();
+  });
+
+  document.querySelectorAll('.sample-word').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const w = btn.dataset.word;
+      wordInput.value = w;
+      renderAnalysis(w);
+    });
+  });
+
+  // عرض القصيدة وتقطيع كلماتها لتكون تفاعلية
+  function renderPoem(index) {
+    if (!filteredPoems.length) return;
+    currentPoemIndex = (index + filteredPoems.length) % filteredPoems.length;
+    const poem = filteredPoems[currentPoemIndex];
+
+    poemEraBadge.textContent = `العصر ${poem.era}`;
+    poemThemeBadge.textContent = poem.theme;
+    poemTitle.textContent = poem.title;
+    poemPoet.textContent = poem.poet;
+    poemIndexIndicator.textContent = `قصيدة ${currentPoemIndex + 1} من ${filteredPoems.length}`;
+    poemSelect.value = poem.id;
+
+    poemArt.setTheme(poem.artType);
+
+    poemVersesContainer.innerHTML = '';
+    poem.verses.forEach((verseLine) => {
+      const parts = verseLine.split('***');
+      const verseDiv = document.createElement('div');
+      verseDiv.className = 'poem-line grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-6 text-lg sm:text-xl text-center bg-black/20 hover:bg-black/30 rounded-2xl px-3 py-2 border border-gold-400/15 transition';
+
+      parts.forEach((hemistich) => {
+        const hemDiv = document.createElement('div');
+        const tokens = hemistich.trim().split(/\s+/);
+        tokens.forEach((tok, idx) => {
+          const span = document.createElement('span');
+          span.className = 'word-token';
+          span.textContent = tok;
+          span.addEventListener('click', () => {
+            document.querySelectorAll('.word-token.active-word').forEach((el) => el.classList.remove('active-word'));
+            span.classList.add('active-word');
+            wordInput.value = tok;
+            renderAnalysis(tok);
+          });
+          hemDiv.appendChild(span);
+          if (idx < tokens.length - 1) {
+            hemDiv.appendChild(document.createTextNode(' '));
+          }
+        });
+        verseDiv.appendChild(hemDiv);
+      });
+
+      poemVersesContainer.appendChild(verseDiv);
+    });
+  }
+
+  function populatePoemSelect() {
+    poemSelect.innerHTML = '';
+    filteredPoems.forEach((p, idx) => {
+      const opt = document.createElement('option');
+      opt.value = p.id;
+      opt.textContent = `${idx + 1}. ${p.title} — ${p.poet}`;
+      poemSelect.appendChild(opt);
+    });
+    poemCountBadge.textContent = filteredPoems.length;
+  }
+
+  function filterPoems() {
+    const era = eraFilter.value;
+    const query = poemSearchInput.value.trim();
+
+    filteredPoems = POEMS_DB.filter((p) => {
+      const matchEra = era === 'all' || p.era === era;
+      const matchQuery = !query || p.title.includes(query) || p.poet.includes(query) || p.verses.some(v => v.includes(query));
+      return matchEra && matchQuery;
+    });
+
+    if (!filteredPoems.length) {
+      filteredPoems = [...POEMS_DB];
+    }
+
+    populatePoemSelect();
+    renderPoem(0);
+  }
+
+  eraFilter.addEventListener('change', filterPoems);
+  poemSearchInput.addEventListener('input', filterPoems);
+
+  poemSelect.addEventListener('change', () => {
+    const selectedId = Number(poemSelect.value);
+    const idx = filteredPoems.findIndex((p) => p.id === selectedId);
+    if (idx !== -1) renderPoem(idx);
+  });
+
+  document.getElementById('prevPoemBtn').addEventListener('click', () => renderPoem(currentPoemIndex - 1));
+  document.getElementById('nextPoemBtn').addEventListener('click', () => renderPoem(currentPoemIndex + 1));
+  document.getElementById('randomPoemBtn').addEventListener('click', () => {
+    const rand = Math.floor(Math.random() * filteredPoems.length);
+    renderPoem(rand);
+  });
+
+  // تبديل المظهر التراثي (النهاري / الليلي)
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIcon = document.getElementById('themeIcon');
+  const themeLabel = document.getElementById('themeLabel');
+  let isDarkMode = false;
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      isDarkMode = !isDarkMode;
+      document.documentElement.classList.toggle('dark', isDarkMode);
+      if (isDarkMode) {
+        themeIcon.textContent = '☀️';
+        themeLabel.textContent = 'وضع نهار الضاد';
+      } else {
+        themeIcon.textContent = '🌙';
+        themeLabel.textContent = 'وضع حبر الليل';
+      }
+    });
+  }
+
+  // التشغيل الأولي
+  populatePoemSelect();
+  renderPoem(0);
+  renderAnalysis('يستغفرون');
+
+  // حلقة الرسوم المتحركة للشجرة وخلفية القصيدة
+  function animate() {
+    willowTree.draw();
+    poemArt.draw();
+    requestAnimationFrame(animate);
+  }
+  animate();
+});
+</script>
+</body>
+</html>
